@@ -25,18 +25,10 @@ CIVILIAN setFriend [INDEPENDENT , 1];
 [getMarkerPos "marker_low_6", 1.5, 150, 250] call cbrn_fnc_createZone;
 [getMarkerPos "marker_low_7", 2.5, 25, 65] call cbrn_fnc_createZone;
 
-{
-    _x addEventHandler ["FiredNear", {
-        params ["_nest"];
-        if !(_nest getVariable ["active", false]) then {
-            _nest setVariable ["active", true];
-            _nest removeEventHandler ["FiredNear", _thisEventhandler];
-            ["kruki_spawn", ["Crowe", getpos _nest,1 + (ceil random 5), 0, 29, _nest]] call CBA_fnc_globalevent;
-            [{deleteVehicle _this}, _nest, 60*5] call CBA_fnc_waitAndExecute;
-        };
-    }];
-// } forEach [crows_1,crows_2,crows_3,crows_4,crows_5,crows_6,crows_7,crows_8,crows_9,crows_10,crows_11,crows_12];
-} forEach ((getMissionLayerEntities "Crow Nests")#0);
+
+    
+//Custom ambient sounds
+
 
 private _ambient_snds = [];
       for "_i" from 0 to 27 do {
