@@ -7,7 +7,7 @@ _przewodnik3 hideObjectGlobal true;
 _przewodnik3 setDir (getDir _obiekt);
 
 _refractFX = "#particlesource" createVehicle [0,0,0];
-_refractFX setParticleClass "ObjectDestructionFire1Smallx";
+
 _refractFX setposASL getPosASL _obiekt;
 
 _refractFX setParticleRandom [0, [0, 0, 0], [0.1, 0.1, 0.1], 0, 2, [0, 0, 0, 0.1], 0, 0];
