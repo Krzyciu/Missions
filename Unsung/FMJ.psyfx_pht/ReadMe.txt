@@ -1,5 +1,7 @@
 Krzyciu - https://github.com/Krzyciu
 
+USMC fighting for Hue City with armor/air support.
+
 This work uses the license Arma Public License Share Alike (APL-SA)
 
 https://www.bohemia.net/community/licenses/arma-public-license-share-alike
