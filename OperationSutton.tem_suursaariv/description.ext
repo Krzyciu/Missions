@@ -1,0 +1,24 @@
+#include "ustawienia_zakonczen.hpp"
+
+//Krzysiowe rzeczy
+//
+
+class RscTitles
+{
+    #include "titles.hpp"
+};
+#include "defines.hpp"
+#include "dialogs.hpp"
+
+//Customowy LoadingScreen//
+class Extended_DisplayLoad_EventHandlers {
+    class RscDisplayLoading {
+        Mission_customLoadingScreen = "_this call compile preprocessFileLineNumbers 'initLoadingScreen.sqf'";
+    };
+};
+
+class Extended_PreInit_EventHandlers {
+    class Krzyc_preInit {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
