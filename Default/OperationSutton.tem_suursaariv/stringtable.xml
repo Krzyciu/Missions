@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Mission">
+  <Package name="Krzyc">
+    <Key ID="STR_Mission_Intro_1">
+      <Original>&lt;t font='RobotoCondensedLight' size='2'&gt;Falkland Wschodni, Zatoka San Carlos&lt;br/&gt;&lt;br/&gt; 8 maja 1982 roku,godzina 3:40.&lt;/t&gt;</Original>
+    </Key>
+    <Key ID="STR_Mission_Intro_2">
+      <Original>&lt;t font='RobotoCondensedLight' size='2'&gt;Po zatopieniu HMS „Antelope” oraz HMS „Antrim”, Downing Street zaczęło naciskać na przyspieszenie desantu jednostek lądowych.&lt;/t&gt;</Original>
+    </Key>
+    <Key ID="STR_Mission_Intro_3">
+      <Original>&lt;t font='RobotoCondensedLight' size='2'&gt;Na pokładzie lotniskowca HMS „Hermes” Drugi Batalion Spadochronowy przygotowuje się do desantu na Falkland Wschodni.&lt;br/&gt;&lt;br/&gt;Rozpoczyna się Operacja Sutton.&lt;/t&gt;</Original>
+    </Key>
+    <Key ID="STR_Mission_Intro_4">
+      <Original>Zatoka San Carlos</Original>
+    </Key>
+    <Key ID="STR_Mission_Intro_5">
+      <Original>8 maja 1982, 3:40</Original>
+    </Key>
+    <Key ID="STR_Mission_Intro_6">
+      <Original>2nd Parachute Regiment 'Hell's Last Issue'</Original>
+    </Key>
+  </Package>
+</Project>
