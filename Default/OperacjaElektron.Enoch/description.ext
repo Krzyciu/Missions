@@ -1,0 +1,107 @@
+#include "ustawienia_zakonczen.hpp"
+
+//Krzysiowe rzeczy
+//
+//
+
+#include "defines.hpp"
+#include "dialogs.hpp"
+class RscTitles
+{
+    #include "titles.hpp"
+    #include "rsc_downloadingData.hpp"
+};
+
+class CfgSounds {
+    sounds[] = {};
+    	class spark
+	{
+		name = "spark";
+		// start path to sound file in AddOn with @
+		sound[] = {"data\spark.wav", 11, 1.0};
+		titles[] = {0,""};
+	};
+  class waterDrop
+  {
+    name = "waterDrop";
+    sound[] = {"\data\waterDrop.ogg", db+30, 1};
+    titles[] = {1, ""};
+  };
+  class fundal_gas
+	{
+		name = "fundal_gas";
+		sound[] = {"data\fundal_gas.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class gas_1
+	{
+		name = "gas_1";
+		sound[] = {"data\gas_1.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class gas_2
+	{
+		name = "gas_2";
+		sound[] = {"data\gas_2.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class gas_3
+	{
+		name = "gas_3";
+		sound[] = {"data\gas_3.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class gas_4
+	{
+		name = "gas_4";
+		sound[] = {"data\gas_4.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class gas_9
+	{
+		name = "gas_9";
+		sound[] = {"data\gas_9.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+  class pass_ok
+{
+  name = "pass_ok";
+  sound[] = {"data\pass_ok.ogg", db+20, 1};
+  titles[] = {};
+};
+class pass_wrong
+{
+  name = "pass_wrong";
+  sound[] = {"data\pass_wrong.ogg", db+20, 1};
+  titles[] = {};
+};
+class orbSound
+{
+  name = "orbSound";
+  sound[] = {"data\orbSound.ogg", db+20, 1};
+  titles[] = {};
+};
+class warning
+{
+  name = "warning";
+  sound[] = {"data\warning.ogg", db+20, 1};
+  titles[] = {};
+};
+class buzzer
+{
+  name = "buzzer";
+  sound[] = {"data\buzzer.ogg", 50, 1};
+  titles[] = {};
+};
+};
+//Customowy LoadingScreen//
+class Extended_DisplayLoad_EventHandlers {
+    class RscDisplayLoading {
+        Mission_customLoadingScreen = "_this call compile preprocessFileLineNumbers 'initLoadingScreen.sqf'";
+    };
+};
+class Extended_PreInit_EventHandlers {
+    class OperationSilverGate_preInit {
+        init = "call compile preprocessFileLineNumbers 'XEH_preInit.sqf'";
+    };
+};
