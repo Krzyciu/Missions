@@ -13,3 +13,4 @@ PREP(explosions);
 PREP(orb);
 PREP(blackfishLocal);
 PREP(blackfishServer);
+PREP(vlsFire);

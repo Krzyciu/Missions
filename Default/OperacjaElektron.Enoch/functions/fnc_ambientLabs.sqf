@@ -8,6 +8,8 @@ switch (_situation) do {
       sleep 0.7;
       lamp_1 say2D "spark";
       sleep 0.6;
+      private _warningSound2 = [{loudspeaker say3D ["alarm", 400, 1, true]},60,[]] call CBA_fnc_addPerFrameHandler;
+      if (isServer) then {
           {
           _x setDamage 1;
           } forEach ((getMissionLayerEntities "Lamps") select 0);
@@ -17,10 +19,13 @@ switch (_situation) do {
           _x setDamage 0;
           [_x,2] spawn Krzyc_fnc_setLamp;
           } forEach ((getMissionLayerEntities "Lamps") select 0);
+      };
       sleep 15;
       [gas_1,0,0,[1,1,1]]  spawn Krzyc_fnc_gasLeak;
       sleep 45;
       {deleteVehicle _x} forEach [water_1,gas_1];
+      sleep 500;
+      [_warningSound2] call CBA_fnc_removePerFrameHandler;
   };
   case "Room_1":
     {

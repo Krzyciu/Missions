@@ -93,6 +93,18 @@ class buzzer
   sound[] = {"data\buzzer.ogg", 50, 1};
   titles[] = {};
 };
+class alarm
+{
+  name = "alarm";
+  sound[] = {"data\alarm.ogg", 50, 1};
+  titles[] = {};
+};
+class countdown
+{
+  name = "countdown";
+  sound[] = {"data\countdown.ogg", 50, 1};
+  titles[] = {};
+};
 };
 //Customowy LoadingScreen//
 class Extended_DisplayLoad_EventHandlers {
