@@ -2,7 +2,7 @@ Krzyciu - https://github.com/Krzyciu
 
 USMC fighting for Hue City with armor/air support.
 
-Video - https://youtu.be/7pKfFdHYVIk
+Video - https://youtu.be/im67X6u9xu4
 
 This work uses the license Arma Public License Share Alike (APL-SA)
 
