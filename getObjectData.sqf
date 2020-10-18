@@ -1,9 +1,7 @@
-_data = [];
-{_modelPath = ((getModelInfo _x) select 1);
-_posWorld = getPosWorld _x;
-_vector = [vectorDir _x, vectorUp _x];
-_info = [_modelPath,_posWorld,_vector];
-_data = _data + _info;
-}
-forEach ((getMissionLayerEntities "Ambient") select 0);
-copyToClipboard str [_data];
+private _objects = (getMissionLayerEntities "Objects (simple)") # 0;
+{
+private _data = [_x] call BIS_fnc_simpleObjectData;
+_data params ["", "_model", "_reversed"];
+
+diag_log [_model, getPosWorld _x, [vectorDir _x, vectorUp _x], _reversed];
+} forEach _objects;
