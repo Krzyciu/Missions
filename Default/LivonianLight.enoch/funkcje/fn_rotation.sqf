@@ -1,3 +1,4 @@
+//obsolete dont use anymore
 params ["_obiekt","_effect"];
 if (isDedicated) then {
 sleep selectRandom [1,5,8,12,15];
