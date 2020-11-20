@@ -1,3 +1,4 @@
+By SzwedzikPL
 private _data = call compile preprocessFileLineNumbers "data_map.sqf";
 private _count = count _data;
   {
