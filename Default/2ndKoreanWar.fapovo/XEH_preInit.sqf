@@ -18,12 +18,12 @@ if (is3DEN) then {
   0 spawn {
     private _handle = [{
       ace_map_mapIllumination = false;
-      ace_medical_playerDamageThreshold = 5.5;
+      ace_medical_playerDamageThreshold = 6.5;
 			ace_medical_statemachine_fatalInjuriesPlayer = 1;
       ace_map_mapShowCursorCoordinates = true;
       ace_map_DefaultChannel = 0;
-    }, 0, []] call CBA_fnc_addPerFrameHandler;
-    sleep 15;
+    }, 0.5, []] call CBA_fnc_addPerFrameHandler;
+    sleep 10;
     [_handle] call CBA_fnc_removePerFrameHandler;
   };
 };
