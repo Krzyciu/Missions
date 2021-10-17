@@ -12,5 +12,4 @@ Dedicated server ready
 - [ACRE](https://github.com/IDI-Systems/acre2)
 - [A3MP](https://www.arma3coop.pl/)
 - [PAM](https://www.arma3coop.pl/)
-- [Unsung](https://steamcommunity.com/workshop/filedetails/?id=943001311)
 - [Iron Front](https://steamcommunity.com/sharedfiles/filedetails/?id=660460283)
