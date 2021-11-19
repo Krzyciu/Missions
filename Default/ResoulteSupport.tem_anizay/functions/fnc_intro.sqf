@@ -2,7 +2,7 @@
 
 LOG("intro");
 
-[false] call a3cs_ui_fnc_toggleScreenshotMode;
+[false] call A3CFUNC(ui,toggleScreenshotMode);
 0 fadeSound 0;
 
 with localNamespace do
@@ -13,18 +13,18 @@ with localNamespace do
    _ctrl ctrlCommit 0;
    _ctrl spawn {
      params ["_ctrl"];
-     sleep 32;
+     sleep 40;
      ctrlDelete _ctrl;
    };
-   localNamespace setVariable ["Krzyc_angle", 0];
-   localNamespace setVariable ["Krzyc_ctrl", _ctrl];
+   localNamespace setVariable [QGVAR(angle), 0];
+   localNamespace setVariable [QGVAR(ctrl), _ctrl];
    onEachFrame
    {
     with localNamespace do
     {
-     if (Krzyc_angle > 359) then {Krzyc_angle = 0};
-     Krzyc_ctrl ctrlSetAngle [Krzyc_angle, 0.5, 0.5];
-     Krzyc_angle = Krzyc_angle + 0.5;
+     if (GVAR(angle) > 359) then {GVAR(angle) = 0};
+     GVAR(ctrl) ctrlSetAngle [GVAR(angle), 0.5, 0.5];
+     GVAR(angle) = GVAR(angle) + 0.5;
     };
    };
 };
@@ -41,8 +41,8 @@ waitUntil {
 waitUntil {
   sleep 0.25;
   private _status = missionNamespace getVariable ["a3cs_modules_3DENCompObjectsSpawn", [false, 0, 0, false]];
-  private _counter = _status # 1;
-  private _count = _status # 2;
+  private _counter = _status #1;
+  private _count = _status #2;
   if (_count > 0) then {
     private _percent = floor ((_counter / _count) * 100);
     titleText [format [
@@ -86,11 +86,10 @@ sleep 2;
 2 cutFadeOut 0;
 titleText ["","BLACK IN",10];
 sleep 3;
-onEachFrame{};
 0 spawn {
     private _w = 2.42;
     private _h = 0.25;
-    private _unitData = [player, false] call a3cs_nametags_fnc_getUnitData;
+    private _unitData = [player, false] call A3CFUNC(nametags,getUnitData);
     date params ["", "", "", "_hour", "_minute"];
 
     [
@@ -105,5 +104,28 @@ onEachFrame{};
     ] spawn FUNC(typeText);
 };
 
-sleep 12;
+sleep 6;
+onEachFrame{};
+sleep 6;
 cutText ["","BLACK IN", 18];
+_pp_DynBlur = ppEffectCreate ["dynamicBlur",100];
+_pp_DynBlur ppEffectAdjust [3];
+_pp_DynBlur ppEffectCommit 0;
+_pp_DynBlur ppEffectEnable true;
+
+_pp_colorC = ppEffectCreate ["ColorCorrections",1500];
+_pp_colorC ppEffectAdjust [1,1, 0, [0,0, 0, 0.0], [0.5, 0.5, 0.5,0],  [0.1, 0.9, 0.9, 0]];
+_pp_colorC ppEffectCommit 0;
+_pp_colorC ppEffectEnable true;
+
+sleep 3;
+_pp_DynBlur ppEffectAdjust [0];
+_pp_DynBlur ppEffectCommit 5;
+
+_pp_colorC ppEffectAdjust [1,1, 0, [0,0, 0, 0.0], [0.5, 0.5, 0.5,1],  [0.1, 0.9, 0.9, 0]];
+_pp_colorC ppEffectCommit 5;
+
+sleep 7;
+_pp_DynBlur ppEffectEnable false;
+_pp_colorC ppEffectEnable false;
+ppEffectDestroy [_pp_DynBlur, _pp_colorC];

@@ -25,15 +25,15 @@ _picture ctrlSetPosition [
 _picture ctrlCommit 0;
 _picture ctrlSetText "data\a3c2.paa";
 
-private _text = _display ctrlCreate ["RscLoadingText", -1];
+private _text = _display ctrlCreate ["RscStructuredText", -1];
 
 _text ctrlSetPosition [
     0.5-_width/2,
-    0.5,
+    0.25+_height/1.15,
     _width, _height
 ];
 _text ctrlCommit 0;
-_text ctrlSetText "Tequila Highway";
+_text ctrlSetStructuredText parseText "<t color='#9abf9a' size='1.7' align='center'> Resoulte Support </t>";
 
 
 private _text3 = _display ctrlCreate ["RscStructuredText", -1];

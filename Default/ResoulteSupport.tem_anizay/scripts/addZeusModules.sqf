@@ -2,8 +2,33 @@
 
 ["[Krzyciu] - Mission", "Liczba cywili", {
   ["Pokazać?", [], {
-    [QGVAR(civiliansCount)] call CBA_fnc_globalEvent;
+  [QGVAR(civiliansCount), GVAR(confirmedKills)] call CBA_fnc_globalEvent;
   }, {}, []] call zen_dialog_fnc_create;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Mission", "Landing Guide", {
+  params ["", "_target"];
+  if (isNull _target) exitWith {};
+  [QGVAR(landingGuide), _target] call CBA_fnc_globalEvent;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Mission", "Damage Unit", {
+  params ["", "_target"];
+  if (isNull _target) exitWith {};
+  [QGVAR(damageUnit), _target, _target] call CBA_fnc_targetEvent;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Mission", "Ambient talk", {
+  params ["", "_target"];
+  if (isNull _target) exitWith {};
+  private _sound = format ["Krzyc_M%1ambient%2", (floor random 5) +1,(floor random 31)];
+  [QGVAR(ambientTalk), [_target, _sound]] call CBA_fnc_globalEvent;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Mission", "Surrender", {
+  params ["", "_target"];
+  if (isNull _target) exitWith {};
+  [QGVAR(surrender), _target] call CBA_fnc_globalEvent;
 }] call zen_custom_modules_fnc_register;
 
 ["[Krzyciu] - Medevac", "Medevac - 1", {
@@ -53,6 +78,7 @@
   ["Rozpocząć zadanie medeavc?", [], {
   missionNamespace setVariable ["medevac_4", true, true];
   [QGVAR(playSound)] call CBA_fnc_globalEvent;
+  ["high", true, konsul] spawn GVAR(damageUnit);
   }, {}, []] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
@@ -67,6 +93,7 @@
   ["Rozpocząć zadanie medeavc?", [], {
   missionNamespace setVariable ["medevac_5", true, true];
   [QGVAR(playSound)] call CBA_fnc_globalEvent;
+  ["high", true, p_18] spawn GVAR(damageUnit);
   }, {}, []] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
 
@@ -129,5 +156,19 @@
 ["[Krzyciu] - Zaliczenia", "Medevac - 9", {
   ["Zaliczyć zadanie?", [], {
   [QGVAR(medevac_9)] call CBA_fnc_serverEvent;
+  }, {}, []] call zen_dialog_fnc_create;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Medevac", "Medevac - 10", {
+  if (missionNamespace getVariable ["medevac_10", false]) exitWith {};
+  ["Rozpocząć zadanie medeavc?", [], {
+  missionNamespace setVariable ["medevac_10", true, true];
+  [QGVAR(playSound)] call CBA_fnc_globalEvent;
+  }, {}, []] call zen_dialog_fnc_create;
+}] call zen_custom_modules_fnc_register;
+
+["[Krzyciu] - Zaliczenia", "Medevac - 10", {
+  ["Zaliczyć zadanie?", [], {
+  [QGVAR(medevac_10)] call CBA_fnc_serverEvent;
   }, {}, []] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;

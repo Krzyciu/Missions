@@ -33,8 +33,9 @@ a3c_missionTemplate = 3.00;
 // Deklaracje wyglądu ulotek
 // Dokumentacja: https://community.bistudio.com/wiki/Arma_3:_Leaflets
 // Odkomentuj aby użyć
-// #include "config\CfgLeaflets.hpp"
+#include "config\CfgLeaflets.hpp"
 #include "config\dialogs.hpp"
+
 disableChannels[] = {
 	{1, true, true},
 	{2, true, true},
@@ -68,8 +69,8 @@ class CfgIdentities
 	class civ_1
 	{
 		face = "PersianHead_A3_01";
-		glasses = "CFB_Beard";
-		name = LLSTRING(Afghan);
+		glasses = "CFP_Beard";
+		name = "";
 		nameSound = "";
 		pitch = 1.0;
 		speaker = "Male01PER";
@@ -77,8 +78,8 @@ class CfgIdentities
 	class civ_2
 	{
 		face = "PersianHead_A3_02";
-		glasses = "CFB_Beard";
-		name = LLSTRING(Afghan);
+		glasses = "CFP_Beard";
+		name = "";
 		nameSound = "";
 		pitch = 1.0;
 		speaker = "Male02PER";
@@ -87,7 +88,7 @@ class CfgIdentities
 	{
 		face = "PersianHead_A3_03";
 		glasses = "";
-		name = LLSTRING(Afghan);
+		name = "";
 		nameSound = "";
 		pitch = 1.0;
 		speaker = "Male03PER";
@@ -95,8 +96,8 @@ class CfgIdentities
 	class civ_4
 	{
 		face = "PersianHead_A3_03";
-		glasses = "CFB_Beard"
-		name = LLSTRING(Afghan);
+		glasses = "CFP_Beard";
+		name = "";
 		nameSound = "";
 		pitch = 1.0;
 		speaker = "Male02PER";
@@ -105,9 +106,11 @@ class CfgIdentities
 	{
 		face = "PersianHead_A3_02";
 		glasses = "";
-		name = LLSTRING(Afghan);
+		name = "";
 		nameSound = "";
 		pitch = 1.0;
 		speaker = "Male01PER";
 	};
 };
+
+zeusCompositionScriptLevel = 0;

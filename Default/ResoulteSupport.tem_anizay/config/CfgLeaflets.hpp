@@ -5,11 +5,11 @@
 
 class CfgLeaflets {
     // Pamiętaj, że GVAR(twojaKlasa) rozwiazuje się do mission_twojaKlasa
-    class GVAR(twojaKlasa) {
+    class east {
         // Tekst pokazywany podczas przeglądania ulotki
-        text = ""; // Możesz też użyc CSTRING(CfgLeaflets_Example);
+        text = "FUCK YOU NATO!"; // Możesz też użyc CSTRING(CfgLeaflets_Example);
 
         // Ścieżka do tekstury ulotki, plik musi być w formacie PAA, wymiary - kwadratowe np. 128x128, 256x256, 496x496 itd.
-        texture = "data/a3c2.paa";
+        texture = "data\fucknato3.paa";
  	}
 };

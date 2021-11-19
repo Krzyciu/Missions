@@ -1,439 +1,654 @@
-class ctrlDefault;
-class ctrlDefaultText;
-class ctrlDefaultButton;
-class ctrlStatic;
-class ctrlStaticPicture;
-class ctrlStaticPictureKeepAspect;
-class ctrlStaticPictureTile;
-class ctrlStaticFrame;
-class ctrlStaticLine;
-class ctrlStaticMulti;
-class ctrlStaticBackground;
-class ctrlStaticOverlay;
-class ctrlStaticTitle;
-class ctrlStaticFooter;
-class ctrlStaticBackgroundDisable;
-class ctrlStaticBackgroundDisableTiles;
-class ctrlButton;
-class ctrlButtonPicture;
-class ctrlButtonPictureKeepAspect;
-class ctrlButtonOK;
-class ctrlButtonCancel;
-class ctrlButtonClose;
-class ctrlButtonToolbar;
-class ctrlButtonSearch;
-class ctrlButtonExpandAll;
-class ctrlButtonCollapseAll;
-class ctrlButtonFilter;
-class ctrlEdit;
-class ctrlEditMulti;
-class ctrlSliderV;
-class ctrlSliderH;
-class ctrlCombo;
-class ctrlComboToolbar;
-class ctrlListbox;
-class ctrlToolbox;
-class ctrlToolboxPicture;
-class ctrlToolboxPictureKeepAspect;
-class ctrlCheckboxes;
-class ctrlCheckboxesCheckbox;
-class ctrlProgress;
-class ctrlHTML;
-class ctrlActiveText;
-class ctrlActivePicture;
-class ctrlActivePictureKeepAspect;
-class ctrlTree;
-class ctrlStructuredText;
-class ctrlControlsGroup;
-class ctrlControlsGroupNoScrollbars;
-class ctrlControlsGroupNoHScrollbars;
-class ctrlControlsGroupNoVScrollbars;
-class ctrlShortcutButton;
-class ctrlShortcutButtonOK;
-class ctrlShortcutButtonCancel;
-class ctrlShortcutButtonSteam;
-class ctrlXListbox;
-class ctrlXSliderV;
-class ctrlXSliderH;
-class ctrlMenu;
-class ctrlMenuStrip;
-class ctrlObject;
-class ctrlObjectContainer;
-class ctrlObjectZoom;
-class ctrlMap: ctrlDefault
-{
-	class LineMarker;
-	class Legend;
-	class Task;
-	class ActiveMarker;
-	class Waypoint;
-	class WaypointCompleted;
-	class CustomMark;
-	class Command;
-	class Bush;
-	class SmallTree;
-	class Tree;
-	class Rock;
-	class BusStop;
-	class FuelStation;
-	class Hospital;
-	class Church;
-	class Lighthouse;
-	class Power;
-	class PowerSolar;
-	class PowerWave;
-	class PowerWind;
-	class Quay;
-	class Transmitter;
-	class Watertower;
-	class Cross;
-	class Chapel;
-	class Shipwreck;
-	class Bunker;
-	class Fortress;
-	class Fountain;
-	class Ruin;
-	class Stack;
-	class Tourism;
-	class ViewTower;
-};
-class ctrlMapMain;
-class ctrlListNBox;
-class ctrlCheckbox;
-class ctrlCheckboxToolbar;
-class ctrlCheckboxBaseline;
-class ctrlControlsGroupHighlight;
-class ctrlControlsGroupTutorial;
+#define CT_STATIC	0
+#define CT_BUTTON	1
+#define CT_EDIT	2
+#define CT_SLIDER	3
+#define CT_COMBO	4
+#define CT_LISTBOX	5
+#define CT_TOOLBOX	6
+#define CT_CHECKBOXES	7
+#define CT_PROGRESS	8
+#define CT_HTML	9
+#define CT_STATIC_SKEW	10
+#define CT_ACTIVETEXT	11
+#define CT_TREE	12
+#define CT_STRUCTURED_TEXT	13
+#define CT_CONTEXT_MENU	14
+#define CT_CONTROLS_GROUP	15
+#define CT_XKEYDESC	40
+#define CT_XBUTTON	41
+#define CT_XLISTBOX	42
+#define CT_XSLIDER	43
+#define CT_XCOMBO	44
+#define CT_ANIMATED_TEXTURE	45
+#define CT_OBJECT	80
+#define CT_OBJECT_ZOOM	81
+#define CT_OBJECT_CONTAINER	82
+#define CT_OBJECT_CONT_ANIM	83
+#define CT_LINEBREAK	98
+#define CT_USER	99
+#define CT_MAP	100
+#define CT_MAP_MAIN	101
+#define ST_POS	0x0F
+#define ST_HPOS	0x03
+#define ST_VPOS	0x0C
+#define ST_LEFT	0x00
+#define ST_RIGHT	0x01
+#define ST_CENTER	0x02
+#define ST_DOWN	0x04
+#define ST_UP	0x08
+#define ST_VCENTER	0x0c
+#define ST_TYPE	0xF0
+#define ST_SINGLE	0
+#define ST_MULTI	16
+#define ST_TITLE_BAR	32
+#define ST_PICTURE	48
+#define ST_FRAME	64
+#define ST_BACKGROUND	80
+#define ST_GROUP_BOX	96
+#define ST_GROUP_BOX2	112
+#define ST_HUD_BACKGROUND	128
+#define ST_TILE_PICTURE	144
+#define ST_WITH_RECT	160
+#define ST_LINE	176
+#define ST_SHADOW	0x100
+#define ST_NO_RECT	0x200
+#define ST_KEEP_ASPECT_RATIO	0x800
+#define ST_TITLE	ST_TITLE_BAR + ST_CENTER
+#define SL_DIR	0x400
+#define SL_VERT	0
+#define SL_HORZ	0x400
+#define SL_TEXTURES	0x10
+#define LB_TEXTURES	0x10
+#define LB_MULTI	0x20
+#define FontM	"TahomaB"
+#define FontHTML	"TahomaB"
 
-class Krzyc_radioDisplay
-{
-	idd=2201;
-	enablesimulation=1;
-	enabledisplay=1;
-	class controlsBackground
-	{
-		class Radio_CA: ctrlStaticPicture
-		{
-			text="\data\Radio\radio_ca.paa";
-			x="((getResolution select 2) * 0.5 * pixelW) - 70 * (pixelW * pixelGrid * 0.50)";
-			y="((getResolution select 3) * 0.5 * pixelH) - 75 * (pixelH * pixelGrid * 0.50)";
-			w="200 * (pixelW * pixelGrid * 0.50)";
-			h="100 * (pixelH * pixelGrid * 0.50)";
+
+class GVAR(boardPicture) {
+	type = CT_STATIC;
+	idc = -1;
+	style = ST_PICTURE;
+	colorBackground[] = {0, 0, 0, 0};
+	colorText[] = {1, 1, 1, 1};
+	font = FontM;
+	sizeEx = 0.02;
+	text = "";
+};
+
+class GVAR(cutWire) {
+	type = CT_BUTTON;
+	idc = -1;
+	style = ST_CENTER;
+	colorText[]={0, 0, 0, 1};
+	font = FontHTML;
+	sizeEx = 0.025;
+	soundPush[] = {"", 0.2, 1};
+	soundClick[] = {"", 0.2, 1};
+	soundEscape[] = {"", 0.2, 1};
+	default = false;
+	text = "";
+    action = "_this call Krzyc_fnc_boardCut";
+	colorActive[] = {0, 0, 0, 0};
+	colorDisabled[] = {0, 0, 0, 0};
+	colorBackground[] = {0, 0, 0, 0};
+	colorBackgroundActive[] = {0, 0, 0, 0};
+	colorBackgroundDisabled[] = {0, 0, 0, 0};
+	colorFocused[] = {0.84, 1, 0.55, 0};
+	colorShadow[] = {1, 1, 1, 0};
+	colorBorder[] = {0, 0, 0, 0};
+	offsetX = 0;
+	offsetY = 0;
+	offsetPressedX = 0;
+	offsetPressedY = 0;
+	borderSize = 0;
+	soundEnter[] = {"", 0.15, 1};
+};
+
+class GVAR(clickAnywhere) {
+	type = CT_BUTTON;
+	idc = -1;
+	style = ST_CENTER;
+	colorText[]={0, 0, 0, 1};
+	font = FontHTML;
+	sizeEx = 0.025;
+	soundPush[] = {"", 0.2, 1};
+	soundClick[] = {"", 0.2, 1};
+	soundEscape[] = {"", 0.2, 1};
+	default = false;
+	text = "";
+	action = "_this call Krzyc_fnc_boardFail";
+    colorActive[] = {0, 0, 0, 0};
+	colorDisabled[] = {0, 0, 0, 0};
+	colorBackground[] = {0, 0, 0, 0};
+	colorBackgroundActive[] = {0, 0, 0, 0};
+	colorBackgroundDisabled[] = {0, 0, 0, 0};
+	colorFocused[] = {0.84, 1, 0.55, 0};
+	colorShadow[] = {1, 1, 1, 0};
+	colorBorder[] = {0, 0, 0, 0};
+	offsetX = 0;
+	offsetY = 0;
+	offsetPressedX = 0;
+	offsetPressedY = 0;
+	borderSize = 0;
+	soundEnter[] = {"", 0.15, 1};
+};
+
+class GVAR(board_1) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_1.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+        class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+			x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.366 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
 		};
 	};
-	class controls
-	{
-		class RadioGroup: ctrlControlsGroupNoScrollbars
-		{
-			idc=-1;
-			x="((getResolution select 2) * 0.5 * pixelW) - 70 * (pixelW * pixelGrid * 0.50)";
-			y="((getResolution select 3) * 0.5 * pixelH) - 75 * (pixelH * pixelGrid * 0.50)";
-			w="200 * (pixelW * pixelGrid * 0.50)";
-			h="60 * (pixelH * pixelGrid * 0.50)";
-			class controls
-			{
-				class BandDial: ctrlStaticPicture
-				{
-					text="\data\Radio\dial_3_ca.paa";
-					angle=90;
-					color[]={0.80000001,0.80000001,0.80000001,1};
-					colorActive[]={1,1,1,1};
-					colorDisabled[]={1,1,1,1};
-					x="33 * (pixelW * pixelGrid * 0.50)";
-					y="40 * (pixelH * pixelGrid * 0.50)";
-					w="16 * (pixelW * pixelGrid * 0.50)";
-					h="16 * (pixelH * pixelGrid * 0.50)";
-				};
-				class BandDialButton: ctrlButton
-				{
-					idc=-1;
-					x="33 * (pixelW * pixelGrid * 0.50)";
-					y="40 * (pixelH * pixelGrid * 0.50)";
-					w="16 * (pixelW * pixelGrid * 0.50)";
-					h="16 * (pixelH * pixelGrid * 0.50)";
-					colorBackground[]={0,0,0,0};
-					colorBackgroundDisabled[]={0,0,0,0};
-					colorBackgroundActive[]={0,0,0,0};
-					colorFocused[]={0,0,0,0};
-					colorDisabled[]={0,0,0,0};
-					colorText[]={0,0,0,0};
-				};
-				class PresetLDial: BandDial
-				{
-					text="\data\Radio\dial_1_ca.paa";
-					x="53.5 * (pixelW * pixelGrid * 0.50)";
-					y="31 * (pixelH * pixelGrid * 0.50)";
-					w="14 * (pixelW * pixelGrid * 0.50)";
-					h="14 * (pixelH * pixelGrid * 0.50)";
-				};
-				class PresetLDialButton: BandDialButton
-				{
-					idc=-1;
-					x="53.5 * (pixelW * pixelGrid * 0.50)";
-					y="31 * (pixelH * pixelGrid * 0.50)";
-					w="14 * (pixelW * pixelGrid * 0.50)";
-					h="14 * (pixelH * pixelGrid * 0.50)";
-				};
-				class PresetRDial: PresetLDial
-				{
-					onload="";
-					x="90 * (pixelW * pixelGrid * 0.50)";
-				};
-				class PresetRDialButton: PresetLDialButton
-				{
-					x="90 * (pixelW * pixelGrid * 0.50)";
-					onButtonClick="";
-				};
-				class VolumeDial: BandDial
-				{
-					text="\data\Radio\dial_2_ca.paa";
-					x="120 * (pixelW * pixelGrid * 0.50)";
-					y="26.5 * (pixelH * pixelGrid * 0.50)";
-					w="13 * (pixelW * pixelGrid * 0.50)";
-					h="13 * (pixelH * pixelGrid * 0.50)";
-				};
-				class VolumeDialButton: BandDialButton
-				{
-					x="120 * (pixelW * pixelGrid * 0.50)";
-					y="26.5 * (pixelH * pixelGrid * 0.50)";
-					w="13 * (pixelW * pixelGrid * 0.50)";
-					h="13 * (pixelH * pixelGrid * 0.50)";
-				};
-				class SettingDial: BandDial
-				{
-					x="118 * (pixelW * pixelGrid * 0.50)";
-					y="43.5 * (pixelH * pixelGrid * 0.50)";
-					w="16 * (pixelW * pixelGrid * 0.50)";
-					h="16 * (pixelH * pixelGrid * 0.50)";
-				};
-				class SettingDialButton: BandDialButton
-				{
-					x="118 * (pixelW * pixelGrid * 0.50)";
-					y="43.5 * (pixelH * pixelGrid * 0.50)";
-					w="16 * (pixelW * pixelGrid * 0.50)";
-					h="16 * (pixelH * pixelGrid * 0.50)";
-				};
-			};
+};
+
+class GVAR(board_1_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_1_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
 		};
-		class MapFolder: ctrlStaticPictureKeepAspect
-		{
-			text="\data\vn_displayartillery\mapfolder.paa";
-			x="((getResolution select 2) * 0.5 * pixelW) - 0.5 * 200 * (pixelW * pixelGrid * 0.50)";
-			y="((getResolution select 3) * 0.5 * pixelH) - 10 * (pixelH * pixelGrid * 0.50)";
-			w="200 * (pixelW * pixelGrid * 0.50)";
-			h="0.5 * 200 * (pixelH * pixelGrid * 0.50)";
+	};
+};
+
+class GVAR(board_2) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_2.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
 		};
-		class map_selection: ctrlMap
-		{
-			idc=7001;
-			x="((getResolution select 2) * 0.5 * pixelW) + 13 * (pixelW * pixelGrid * 0.50)";
-			y="((getResolution select 3) * 0.5 * pixelH) + 1 * (pixelH * pixelGrid * 0.50)";
-			w="73 * (pixelW * pixelGrid * 0.50)";
-			h="75 * (pixelH * pixelGrid * 0.50)";
-			showCountourInterval=0;
-			class task
-			{
-				icon="#(argb,8,8,3)color(0,0,0,0)";
-				iconCreated="#(argb,8,8,3)color(0,0,0,0)";
-				iconCanceled="#(argb,8,8,3)color(0,0,0,0)";
-				iconDone="#(argb,8,8,3)color(0,0,0,0)";
-				iconFailed="#(argb,8,8,3)color(0,0,0,0)";
-				color[]={0,0,0,0};
-				colorCreated[]={0,0,0,0};
-				colorCanceled[]={0,0,0,0};
-				colorDone[]={0,0,0,0};
-				colorFailed[]={0,0,0,0};
-				size=0;
-			};
-			class custommark
-			{
-				icon="#(argb,8,8,3)color(0,0,0,0)";
-				color[]={0,0,0,0};
-				size=0;
-				coefMax=4;
-				coefMin=0.25;
-				importance=0;
-			};
-			class hospital: custommark
-			{
-			};
-			class church: custommark
-			{
-			};
-			class lighthouse: custommark
-			{
-			};
-			class power: custommark
-			{
-			};
-			class powersolar: custommark
-			{
-			};
-			class powerwave: custommark
-			{
-			};
-			class powerwind: custommark
-			{
-			};
-			class transmitter: custommark
-			{
-			};
-			class watertower: custommark
-			{
-			};
-			class Cross: custommark
-			{
-			};
-			class Chapel: custommark
-			{
-			};
-			class tourism: custommark
-			{
-			};
-			class biewtower: custommark
-			{
-			};
-			class busstop: custommark
-			{
-			};
-			class fuelstation: custommark
-			{
-			};
-			class rock: custommark
-			{
-			};
-			class smalltree: custommark
-			{
-			};
-			class bush: custommark
-			{
-			};
-			class fortress: custommark
-			{
-			};
-			class fountain: custommark
-			{
-			};
-			class quay: custommark
-			{
-			};
-			class ruin: custommark
-			{
-			};
-			class shipwreck: custommark
-			{
-			};
-			class bunker: custommark
-			{
-			};
-			class stack: custommark
-			{
-			};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.508 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
 		};
-		class NotepadContent: ctrlControlsGroupNoScrollbars
-		{
-			x="((getResolution select 2) * 0.5 * pixelW) - 84 * (pixelW * pixelGrid * 0.50)";
-			y="((getResolution select 3) * 0.5 * pixelH) + 2.5 * (pixelH * pixelGrid * 0.50)";
-			w="74 * (pixelW * pixelGrid * 0.50)";
-			h="75 * (pixelH * pixelGrid * 0.50)";
-			class controls
-			{
-				class Title: ctrlStructuredText
-				{
-					idc=350;
-					text="$STR_ARTILLERY_SUPPORT_AIR";
-					x=0;
-					y=0;
-					w="75 * (pixelW * pixelGrid * 0.50)";
-					h="5 * (pixelH * pixelGrid * 0.50)";
-					size="5 * (pixelH * pixelGrid * 0.50)";
-					shadow=0;
-					class Attributes
-					{
-						align="center";
-						color="#000000";
-						colorLink="#D09B43";
-						size=1;
-						font="RobotoCondensed";
-					};
-				};
-				class AmmoType: ctrlListbox
-				{
-					idc=103;
-					x="0 * (pixelW * pixelGrid * 0.50)";
-					y="7.5 * (pixelH * pixelGrid * 0.50)";
-					w="36.5 * (pixelW * pixelGrid * 0.50)";
-					h="38.5 * (pixelH * pixelGrid * 0.50)";
-					sizeEx="3 * (pixelH * pixelGrid * 0.50)";
-					font="RobotoCondensed";
-					colorBackground[]={0,0,0,0};
-					colorText[]={0,0,0,1};
-					shadow=0;
-				};
-				class Teams: AmmoType
-				{
-					idc=102;
-					x="36 * (pixelW * pixelGrid * 0.50)";
-					w="38 * (pixelW * pixelGrid * 0.50)";
-					h="34.5 * (pixelH * pixelGrid * 0.50)";
-					rowHeight="10 * (pixelH * pixelGrid * 0.50)";
-					sizeEx="3 * (pixelH * pixelGrid * 0.50)";
-				};
-				class Amount: ctrlCombo
-				{
-					idc=104;
-					x="0.5 * (pixelW * pixelGrid * 0.50)";
-					y="50.25 * (pixelH * pixelGrid * 0.50)";
-					w="35 * (pixelW * pixelGrid * 0.50)";
-					h="5 * (pixelH * pixelGrid * 0.50)";
-					font="RobotoCondensed";
-					sizeEx="3 * (pixelH * pixelGrid * 0.50)";
-					colorText[]={0,0,0,1};
-					colorSelect[]={0,0,0,1};
-					colorBackground[]={0.89999998,0.89999998,0.86000001,1};
-					class Items
-					{
-						class Normal
-						{
-							text="$STR_ARTILLERY_AMOUNT_NORMAL";
-						};
-						class Heavy
-						{
-							text="$STR_ARTILLERY_AMOUNT_HEAVY";
-						};
-					};
-				};
-				class Request: ctrlButton
-				{
-					idc=105;
-					text="$STR_ARTILLERY_CONFIRM";
-					font="RobotoCondensed";
-					sizeEx="5 * (pixelH * pixelGrid * 0.50)";
-					x="36.5 * (pixelW * pixelGrid * 0.50)";
-					y="49 * (pixelH * pixelGrid * 0.50)";
-					w="37 * (pixelW * pixelGrid * 0.50)";
-					h="5 * (pixelH * pixelGrid * 0.50)";
-				};
-				class Info: ctrlStructuredText
-				{
-					text="";
-					idc=203;
-					x=0;
-					y="59.5 * (pixelH * pixelGrid * 0.50)";
-					w="75 * (pixelW * pixelGrid * 0.50)";
-					h="15 * (pixelH * pixelGrid * 0.50)";
-					size="3 * (pixelH * pixelGrid * 0.50)";
-					shadow=0;
-					class Attributes
-					{
-						align="left";
-						color="#000000";
-						colorLink="#D09B43";
-						size=1;
-						font="RobotoCondensed";
-					};
-				};
-			};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_2_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_2_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_3) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_3.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.308 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_3_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_3_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_4) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_4.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.308 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_4_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_4_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_5) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_5.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.508 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_5_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_5_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_6) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_6.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.446 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_6_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_6_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_7) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_7.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.565 * safeZoneW;
+			y = safeZoneY + 0.585 * safeZoneH;
+			w = safeZoneW * 0.025;
+			h = safeZoneH * 0.022;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_7_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_7_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_8) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_8.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.610 * safeZoneW;
+			y = safeZoneY + 0.552 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_8_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_8_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_9) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_9.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.485 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.023;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_9_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_9_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+	};
+};
+
+class GVAR(board_10) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_10.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
+		};
+		class GVAR(success): GVAR(cutWire) {
+			idc = 1600;
+			text = "";
+            x = safeZoneX + 0.666 * safeZoneW;
+			y = safeZoneY + 0.508 * safeZoneH;
+			w = safeZoneW * 0.017;
+			h = safeZoneH * 0.017;
+		};
+		class GVAR(fail): GVAR(clickAnywhere) {
+			idc = 1601;
+			text = "";
+			x = safeZoneX + 0.30 * safeZoneW;
+			y = safeZoneY + 0.26 * safeZoneH;
+			w = safeZoneW * 0.4;
+			h = safeZoneH * 0.4;
+		};
+	};
+};
+
+class GVAR(board_10_dis) {
+	idd = -1;
+	movingEnable = false;
+	onLoad = "";
+	onUnload = "1 cutText ['', 'PLAIN']";
+	class Controls {
+		class GVAR(board): GVAR(boardPicture) {
+			idc = 1200;
+			style = 2096;
+			text = "data\boards\board_10_dis.paa";
+			x = safeZoneX;
+			y = safeZoneY;
+			w = safeZoneW;
+			h = safeZoneH;
 		};
 	};
 };

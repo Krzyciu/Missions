@@ -1,85 +1,74 @@
 #include "script_component.hpp"
 
-
-private _action = [
-  QGVAR(talk),
-  LLSTRING(Action_Talk),
-  "\A3\ui_f\data\igui\cfg\simpleTasks\types\talk_ca.paa",
-  {
-    params ["_target"];
-    [_target] call FUNC(civTalk);
-  },
-  {true}
-] call ace_interact_menu_fnc_createAction;
-
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-
 // Bomb defusal interactions
 
-// Check color
 [
   "plp_ct_TravelBagRed",
   0,
-  ["ACE_MainActions"],
-  [QGVAR(checkWire), LLSTRING(Action_CheckWire), "\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa", {
-    params ["_target"];
-    [LLSTRING(Action_CheckWire_Confirm), [], {
-      params ["", "_target"];
-      [_target] spawn FUNC(checkWires);
-    }, {}, _target] call zen_dialog_fnc_create;
-  }, {[player, "ACE_DefusalKit"] call ace_common_fnc_hasItem}, {}, [], [0,0,0], 7] call ace_interact_menu_fnc_createAction
-] call ace_interact_menu_fnc_addActionToClass;
+  [],
+  [QGVAR(prepDefuse), LLSTRING(Action_PrepDefuse), "", {
+    params ["_satchel"];
+    [16, _satchel, {
+      params ["_satchel"];
+      _satchel setVariable [QGVAR(satchelPreped), true, true];
+      hint parseText LLSTRING(Action_PrepDefuse_Success);
+    }, {}, LLSTRING(Action_PrepDefuse_Progress)] call ACEFUNC(common,progressBar);
+  }, {
+    !(_target getVariable [QGVAR(satchelPreped), false])
+  }, {}, [], [0,0,0], 10] call ACEFUNC(interact_menu,createAction)
+] call ACEFUNC(interact_menu,addActionToClass);
 
-// Red
 [
   "plp_ct_TravelBagRed",
   0,
-  ["ACE_MainActions"],
-  [QGVAR(cutWireRed), LLSTRING(Action_CutWireRed), "\A3\ui_f\data\map\diary\icons\playerEast_ca.paa", {
-    params ["_target"];
-    [LLSTRING(Action_CutWire_Confirm), [], {
-      params ["", "_target"];
-      private _color = _target getVariable ["color", "#ff0000"];
-      if (_color isEqualTo "#ff0000") then {
-        [_target] call FUNC(bombDefuse);} else {
-        [_target] call FUNC(bombFail);
-      };
-    }, {}, _target] call zen_dialog_fnc_create;
-  }, {true}, {}, [], [0,0,0], 7] call ace_interact_menu_fnc_createAction
-] call ace_interact_menu_fnc_addActionToClass;
+  [],
+  [QGVAR(prepBoard), LLSTRING(Action_PrepBoard), "", {
+    params ["_satchel"];
+    [5, _satchel, {
+      params ["_satchel"];
+      _satchel setVariable [QGVAR(boardPreped), true, true];
+      hint parseText LLSTRING(Action_PrepBoard_Success);
+    }, {}, LLSTRING(Action_PrepBoard_Progress)] call ACEFUNC(common,progressBar);
+  }, {
+    (_target getVariable [QGVAR(satchelPreped), false]) &&
+    {!(_target getVariable [QGVAR(boardPreped), false])}
+  }, {}, [], [0,0,0], 10] call ACEFUNC(interact_menu,createAction)
+] call ACEFUNC(interact_menu,addActionToClass);
 
-// Green
 [
   "plp_ct_TravelBagRed",
   0,
-  ["ACE_MainActions"],
-  [QGVAR(cutWireGreen), LLSTRING(Action_CutWireGreen), "\A3\ui_f\data\map\diary\icons\playerGuer_ca.paa", {
-    params ["_target"];
-    [LLSTRING(Action_CutWire_Confirm), [], {
-      params ["", "_target"];
-      private _color = _target getVariable ["color", "#ff0000"];
-      if (_color isEqualTo "#00ff00") then {
-        [_target] call FUNC(bombDefuse);} else {
-        [_target] call FUNC(bombFail);
-      };
-    }, {}, _target] call zen_dialog_fnc_create;
-  }, {true}, {}, [], [0,0,0], 7] call ace_interact_menu_fnc_createAction
-] call ace_interact_menu_fnc_addActionToClass;
+  [],
+  [QGVAR(disarmBoard), LLSTRING(Action_DisarmBoard), "", {
+    params ["_satchel"];
+    _satchel call FUNC(boardOpen);
+  }, {
+    (_target getVariable [QGVAR(boardPreped), false]) &&
+    {!(_target getVariable [QGVAR(boardDisarmed), false])} &&
+    {!(_target getVariable [QGVAR(boardFailed), false])}
+  }, {}, [], [0,0,0], 10] call ACEFUNC(interact_menu,createAction)
+] call ACEFUNC(interact_menu,addActionToClass);
 
-  // Blue
-  [
-    "plp_ct_TravelBagRed",
-    0,
-    ["ACE_MainActions"],
-    [QGVAR(cutWireBlue), LLSTRING(Action_CutWireBlue), "\A3\ui_f\data\map\diary\icons\playerWest_ca.paa", {
-      params ["_target"];
-      [LLSTRING(Action_CutWire_Confirm), [], {
-        params ["", "_target"];
-        private _color = _target getVariable ["color", "#ff0000"];
-        if (_color isEqualTo "#0000ff") then {
-          [_target] call FUNC(bombDefuse);} else {
-          [_target] call FUNC(bombFail);
-        };
-      }, {}, _target] call zen_dialog_fnc_create;
-    }, {true}, {}, [], [0,0,0], 7] call ace_interact_menu_fnc_createAction
-  ] call ace_interact_menu_fnc_addActionToClass;
+// Rescue from wreck
+[
+  wreck,
+  0,
+  [],
+  [QGVAR(rescueCrew), LLSTRING(Action_rescueCrew), "", {
+    [player, "AinvPknlMstpSnonWnonDr_medic5", 0] call ACEFUNC(common,doAnimation);
+    [
+      30,
+      [0],
+      {
+          crew_1 setPosASL getPosASL wreck_proxy;
+          ["high", false, crew_1] spawn FUNC(damageUnit);
+          deleteVehicle wreck;
+      },
+      {
+          hint "Przerwano wycinanie"
+      },
+      LLSTRING(Action_rescueCrewBar)
+    ] call ACEFUNC(common,progressBar);
+  },
+  {[player, "ACE_wirecutter"] call ACEFUNC(common,hasItem)}, {}, [], [0,0,0], 10] call ACEFUNC(interact_menu,createAction)
+] call ACEFUNC(interact_menu,addActionToObject);

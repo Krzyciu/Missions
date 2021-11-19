@@ -7,6 +7,7 @@
     Authors:
       CBA Team - Sickboy <sb_at_dev-heaven.net> and Spooner
       Adjusted for mission-making by SzwedzikPL
+      Some sweet love by Krzyciu
 */
 
 #define DOUBLES(var1,var2) var1##_##var2
@@ -25,9 +26,14 @@
 #define FUNC(fncName) TRIPLES(PREFIX,fnc,fncName)
 #define LINKFUNC(x) {_this call FUNC(x)}
 #define QFUNC(fncName) QUOTE(FUNC(fncName))
+#define ACE_PREFIX ace
+#define ACEFUNC(module,function) TRIPLES(DOUBLES(ACE_PREFIX,module),fnc,function)
+#define A3C_PREFIX a3cs
+#define A3CFUNC(module,function) TRIPLES(DOUBLES(A3C_PREFIX,module),fnc,function)
 #define GVAR(varName) DOUBLES(PREFIX,varName)
 #define QGVAR(varName) QUOTE(GVAR(varName))
 #define PREP(fncName) FUNC(fncName) = compileScript [ARR_2(QUOTE(functions\DOUBLES(fnc,fncName).sqf),true)]
+#define PREPAMB(fncName) FUNC(fncName) = compileScript [ARR_2(QUOTE(functions\ambientCivs\DOUBLES(fnc,fncName).sqf),true)]
 #define LSTRING(var1) QUOTE(TRIPLES(STR,PREFIX,var1))
 #define LLSTRING(var1) localize LSTRING(var1)
 #define CSTRING(var1) QUOTE(TRIPLES($STR,PREFIX,var1))
