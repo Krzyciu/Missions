@@ -16,6 +16,21 @@ PREPAMB(getSafespot);
 PREPAMB(civTalk);
 PREPAMB(civStop);
 
+["nvglamp_setLight", {
+    params [["_light", objNull]];
+    if (isNull _light) exitWith {};
+    _light setLightColor [1800,1500,1200];
+    _light setLightAmbient [9,7.5,6];
+    _light setLightIntensity 2.5;
+    _light setLightConePars [85, 25, 4];
+    _light setLightUseFlare true;
+    _light setLightDayLight false;
+    _light setLightFlareSize 0.4;
+    _light setLightFlareMaxDistance 100;
+    _light setLightAttenuation [0, 0, 0, 1, 8, 22];
+    //_light setLightIR true;
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(playAnim), {
   params ["_unit"];
   private _anim = selectRandom ["Acts_CivilInjuredChest_1", "Acts_CivilInjuredGeneral_1", "Acts_CivilInjuredHead_1", "Acts_CivilInjuredLegs_1", "Acts_CivilInjuredArms_1", "Acts_Injured_Driver_Loop", "Acts_InjuredLookingRifle01", "Acts_InjuredLookingRifle02", "Acts_InjuredLookingRifle03", "Acts_InjuredLookingRifle04", "Acts_LyingWounded_loop3"];
@@ -24,7 +39,7 @@ PREPAMB(civStop);
 
 [QGVAR(surrender), {
   params ["_unit"];
-  _unit switchMove _anim;
+  _unit switchMove "";
 }] call CBA_fnc_addEventHandler;
 
 [QGVAR(landingGuide), {
@@ -55,6 +70,13 @@ PREPAMB(civStop);
     _unit switchMove "Acts_JetsMarshallingClear_loop";
     sleep 2;
     _unit switchMove "Acts_JetsMarshallingClear_out";
+  };
+}] call CBA_fnc_addEventHandler;
+
+[QGVAR(spawnCity), {
+  if (!hasInterface && !isServer) then {
+    params ["_city", "_radius", "_civNumber"];
+    [_city, _radius, _civNumber] spawn FUNC(ambientCivilians);
   };
 }] call CBA_fnc_addEventHandler;
 

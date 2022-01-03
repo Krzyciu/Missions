@@ -9,11 +9,11 @@ with localNamespace do
 {
    private _ctrl = findDisplay 46 ctrlCreate ["RscPictureKeepAspect", -1];
    _ctrl ctrlSetPosition [(safeZoneX + (safeZoneWAbs/ 2)- 1.22),(safeZoneY + (safeZoneH/2)+0.835),0.07,0.07];
-   _ctrl ctrlSetText "A3\Missions_F_Exp\data\Img\lobby\ui_campaign_lobby_background_tablet_radial_left_ca.paa";
+   _ctrl ctrlSetText "data\loadingCircle.paa";
    _ctrl ctrlCommit 0;
    _ctrl spawn {
      params ["_ctrl"];
-     sleep 40;
+     sleep 32;
      ctrlDelete _ctrl;
    };
    localNamespace setVariable [QGVAR(angle), 0];
@@ -30,7 +30,9 @@ with localNamespace do
 };
 
 cutText ["", "BLACK FADED", 999];
-sleep 4;
+sleep 2;
+playMusic "CUP_A2BAF_War_Pipes";
+sleep 2;
 // Ekran tworzenia obiektów mapy
 titleText ["<t size='1.4' color='#9abf9a'>Wczytywanie...</t>", "PLAIN DOWN", -1, false, true];
 waitUntil {
@@ -67,7 +69,6 @@ titleFadeOut 2;
 sleep 3;
 titleText [LLSTRING(Intro_3), "PLAIN",-1,true,true];
 sleep 5;
-playMusic "vn_trippin";
 10 fadeSound 1;
 titleFadeOut 2;
 sleep 2;
@@ -82,10 +83,20 @@ sleep 3;
 titleText ["","BLACK IN",3];
 sleep 3;
 titleText ["","BLACK OUT",2];
-sleep 2;
+onEachFrame{};
+2 cutFadeOut 0;
+titleText ["","BLACK IN",5];
+5 fadeMusic 0;
+0 spawn FUNC(initBriefing);
+
+waitUntil {
+  sleep 0.5;
+  player getVariable [QGVAR(briefDone), false];
+};
 2 cutFadeOut 0;
 titleText ["","BLACK IN",10];
 sleep 3;
+openMap [false, false];
 0 spawn {
     private _w = 2.42;
     private _h = 0.25;
@@ -104,28 +115,5 @@ sleep 3;
     ] spawn FUNC(typeText);
 };
 
-sleep 6;
-onEachFrame{};
-sleep 6;
+sleep 12;
 cutText ["","BLACK IN", 18];
-_pp_DynBlur = ppEffectCreate ["dynamicBlur",100];
-_pp_DynBlur ppEffectAdjust [3];
-_pp_DynBlur ppEffectCommit 0;
-_pp_DynBlur ppEffectEnable true;
-
-_pp_colorC = ppEffectCreate ["ColorCorrections",1500];
-_pp_colorC ppEffectAdjust [1,1, 0, [0,0, 0, 0.0], [0.5, 0.5, 0.5,0],  [0.1, 0.9, 0.9, 0]];
-_pp_colorC ppEffectCommit 0;
-_pp_colorC ppEffectEnable true;
-
-sleep 3;
-_pp_DynBlur ppEffectAdjust [0];
-_pp_DynBlur ppEffectCommit 5;
-
-_pp_colorC ppEffectAdjust [1,1, 0, [0,0, 0, 0.0], [0.5, 0.5, 0.5,1],  [0.1, 0.9, 0.9, 0]];
-_pp_colorC ppEffectCommit 5;
-
-sleep 7;
-_pp_DynBlur ppEffectEnable false;
-_pp_colorC ppEffectEnable false;
-ppEffectDestroy [_pp_DynBlur, _pp_colorC];

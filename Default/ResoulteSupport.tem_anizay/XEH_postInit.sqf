@@ -31,7 +31,7 @@ if (hasInterface) then {
     if (didJIP) exitWith {
       player setObjectTextureGlobal [0,"data\Uniform.paa"];
     };
-    0 spawn FUNC(intro);
+    //0 spawn FUNC(intro);
   }] call CBA_fnc_addEventHandler;
 
   // Epipen makes your run a bit faster
@@ -50,16 +50,21 @@ if (hasInterface) then {
     };
   }] call CBA_fnc_addEventHandler;
 
+  GVAR(nvg) = ppEffectCreate ["colorCorrections", 3749];
+  GVAR(nvg) ppEffectForceInNVG true;
+  GVAR(nvg) ppEffectCommit 0;
+  GVAR(nvg) ppEffectEnable false;
+
   ["visionMode", {
       params ["_unit", "_visionMode"];
-      if (isNull objectParent _unit) then {
-          if (_visionMode isEqualTo 1) then {
-              playSound QGVAR(nvg_on);
-          };
-
-          if (_visionMode isEqualTo 0) then {
-              playSound QGVAR(nvg_off);
-          };
+      if (_visionMode isEqualTo 1) then {
+          GVAR(nvg) ppEffectEnable true;
+          GVAR(nvg) ppEffectAdjust [0.9, 0.4, 0, [0, 0.1, 0.2, 0], [0.8, 1, 0.75, 0], [1, 1, 1, 0]];
+          GVAR(nvg) ppEffectCommit 0;
+          playSound QGVAR(nvg_on);
+      } else {
+          GVAR(nvg) ppEffectEnable false;
+          playSound QGVAR(nvg_off);
       };
   }] call CBA_fnc_addPlayerEventHandler;
 
@@ -71,7 +76,7 @@ if (hasInterface) then {
       // Condition: canInteract
       if !(alive _object && (side _object) == civilian) exitWith {};
       // Statement
-      [_object] spawn FUNC(civStop);
+      _object call FUNC(civStop);
   }, {
   },
   [DIK_P, [false, false, false]]] call CBA_fnc_addKeybind;
@@ -85,7 +90,7 @@ if (hasInterface) then {
       // Statement
       private _sound = format ["Krzyc_M%1ambient%2", (floor random 5) +1,(floor random 31)];
       [QGVAR(ambientTalk), [_object, _sound]] call CBA_fnc_globalEvent;
-      [_object] call FUNC(civTalk);
+      _object call FUNC(civTalk);
   }, {
   },
   [DIK_O, [false, false, false]]] call CBA_fnc_addKeybind;

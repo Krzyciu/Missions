@@ -33,7 +33,7 @@ a3c_missionTemplate = 3.00;
 // Deklaracje wyglądu ulotek
 // Dokumentacja: https://community.bistudio.com/wiki/Arma_3:_Leaflets
 // Odkomentuj aby użyć
-#include "config\CfgLeaflets.hpp"
+//#include "config\CfgLeaflets.hpp"
 #include "config\dialogs.hpp"
 
 disableChannels[] = {
@@ -64,62 +64,11 @@ class Extended_DisplayLoad_EventHandlers {
     };
 };
 
-class CfgIdentities
-{
-	class civ_1
-	{
-		face = "PersianHead_A3_01";
-		glasses = "CFP_Beard";
-		name = "";
-		nameSound = "";
-		pitch = 1.0;
-		speaker = "Male01PER";
-	};
-	class civ_2
-	{
-		face = "PersianHead_A3_02";
-		glasses = "CFP_Beard";
-		name = "";
-		nameSound = "";
-		pitch = 1.0;
-		speaker = "Male02PER";
-	};
-	class civ_3
-	{
-		face = "PersianHead_A3_03";
-		glasses = "";
-		name = "";
-		nameSound = "";
-		pitch = 1.0;
-		speaker = "Male03PER";
-	};
-	class civ_4
-	{
-		face = "PersianHead_A3_03";
-		glasses = "CFP_Beard";
-		name = "";
-		nameSound = "";
-		pitch = 1.0;
-		speaker = "Male02PER";
-	};
-	class civ_5
-	{
-		face = "PersianHead_A3_02";
-		glasses = "";
-		name = "";
-		nameSound = "";
-		pitch = 1.0;
-		speaker = "Male01PER";
-	};
-};
 
-class CfgWorlds {
-	class Any {
-		author = "Krzyciu";
-		description = "";
-		pictureMap = "";
-		pictureShot = "";
-		loadingTexts[] = {""};
+class CfgVehicles
+{
+	class O_mas_chi_Plane_Fighter_02_F
+	{
+		maxSpeed = 800;
 	};
 };
-zeusCompositionScriptLevel = 0;
