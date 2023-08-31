@@ -1,0 +1,103 @@
+/*%FSM<COMPILE "scriptedFSM.cfg, Formation">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-260.000000,-160.000000,-160.000000,-100.000000,0.000000,"init"};
+item1[] = {"always",8,218,-260.000000,-80.000000,-160.000000,-20.000000,0.000000,"always"};
+item2[] = {"in_idle",2,250,-260.000000,20.000000,-160.000000,80.000000,0.000000,"in idle"};
+link0[] = {0,1};
+link1[] = {1,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,170,6316128,1,-764.737366,683.553284,857.520386,-184.107391,1218,876,1};
+window[] = {2,-1,-1,-1,-1,1042,156,1567,156,3,1236};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "Formation";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"params [""_unit"",""_safespots""];" \n
+                         "private _treatLowIn = 0.1;" \n
+                         "private _treatLowOut = 0.05;" \n
+                         "" \n
+                         "private _treatMedIn = 0.2;" \n
+                         "private _treatMedOut = 0.1;" \n
+                         "" \n
+                         "private _treatHighIn = 0.4;" \n
+                         "private _treatHighOut = 0.2;" \n
+                         "" \n
+                         "private _usePanicMode = true;" \n
+                         "" \n
+                         "_this setUnitPosWeak ""UP"";" \n
+                         "" \n
+                         "private _destination = getPos _this;" \n
+                         "private _threatValue = 0;" \n
+                         "private _threatVector = [1,0,0];" \n
+                         "private _timer = time;" \n
+                         "" \n
+                         "private _planningMode = ""LEADER PLANNED"";" \n
+                         "" \n
+                         "private _fnc_sendToDestination = " \n
+                         "{" \n
+                         "	params [""_unit"",""_safespot""];	" \n
+                         "	" \n
+                         "	private _destination = if (_safespot isEqualType []) then" \n
+                         "	{" \n
+                         "		_safespot" \n
+                         "	}" \n
+                         "	else" \n
+                         "	{" \n
+                         "		selectRandom (_safespot getVariable [""#positions"",[getPos _safespot]]);" \n
+                         "	};" \n
+                         "	_unit setDestination [_destination,_planningMode,true];" \n
+                         "	_unit setVariable [""#destination"",_destination];" \n
+                         "};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "always">*/
+                                class always
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="in_idle";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "in_idle">*/
+                class in_idle
+                {
+                        name = "in_idle";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"//make unit walk" \n
+                         "_this setUnitPosWeak ""UP"";" \n
+                         "_this playAction ""Default"";" \n
+                         "" \n
+                         "//move randomly between safespots" \n
+                         "private _safespot = [_this,1, _safespots] call Krzyc_fnc_getSafespot;" \n
+                         "_this setVariable [""#safespot"",_safespot];" \n
+                         "[_this,_safespot] call _fnc_sendToDestination;" \n
+                         "" \n
+                         "//update unit state" \n
+                         "_this setVariable [""#state"",""idle""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+        };
+};
+/*%FSM</COMPILE>*/

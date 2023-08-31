@@ -1,0 +1,125 @@
+#include "script_component.hpp"
+#include "config\defines.hpp"
+/*
+ * Config misji
+ * Dokumentacja: https://community.bistudio.com/wiki/Description.ext
+ */
+
+// Definicja wersji szablonu - nie zmieniać!
+a4e_missionTemplate = 1.00;
+
+// Deklaracje ekranów tytułowych
+// Używane np. w https://community.bistudio.com/wiki/titleRsc , https://community.bistudio.com/wiki/cutRsc
+#include "config\RscTitles.hpp"
+
+// Deklaracje zakończeń
+// Dokumentacja:https://community.bistudio.com/wiki/Description.ext#CfgDebriefing
+#include "config\CfgDebriefing.hpp"
+
+// Deklaracje dźwięków używanych z komendami playSound, say2D, say3D. Jeżeli gracz będzie miał ściszone efekty dźwiękowe to nie usłyszy.
+// Dokumentacja: https://community.bistudio.com/wiki/Description.ext#CfgSounds
+#include "config\CfgSounds.hpp"
+
+// Deklaracje muzyki wykorzystywane przy playMusic. Jeżeli gracz będzie miał ściszoną muzykę to nie usłyszy.
+// Dokumentacja: https://community.bistudio.com/wiki/Description.ext#CfgMusic
+// Odkomentuj aby użyć
+#include "config\CfgMusic.hpp"
+
+// Deklaracje naszywek na rękawach
+// Dokumentacja: https://community.bistudio.com/wiki/Arma_3:_Unit_Insignia
+// Odkomentuj aby użyć
+//#include "config\CfgUnitInsignia.hpp"
+
+// Deklaracje wyglądu ulotek
+// Dokumentacja: https://community.bistudio.com/wiki/Arma_3:_Leaflets
+// Odkomentuj aby użyć
+#include "config\CfgLeaflets.hpp"
+#include "config\dialogs.hpp"
+
+disableChannels[] = {
+	{1, true, true},
+	{2, true, true},
+	{3, true, true},
+	{4, true, true},
+	{5, true, true}
+};
+
+allowProfileGlasses = 0;
+
+class Extended_PreInit_EventHandlers {
+    class Krzyc_preInit {
+        init = "call compileScript ['XEH_preInit.sqf']";
+    };
+};
+
+class Extended_PostInit_EventHandlers {
+    class Krzyc_postInit {
+        init = "call compileScript ['XEH_postInit.sqf']";
+    };
+};
+
+class Extended_DisplayLoad_EventHandlers {
+    class RscDisplayLoading {
+        init = "_this call compileScript ['initLoadingScreen.sqf']";
+    };
+};
+
+class CfgIdentities
+{
+	class civ_1
+	{
+		face = "PersianHead_A3_01";
+		glasses = "";
+		name = "";
+		nameSound = "";
+		pitch = 1.0;
+		speaker = "Male01PER";
+	};
+	class civ_2
+	{
+		face = "PersianHead_A3_02";
+		glasses = "";
+		name = "";
+		nameSound = "";
+		pitch = 1.0;
+		speaker = "Male02PER";
+	};
+	class civ_3
+	{
+		face = "PersianHead_A3_03";
+		glasses = "";
+		name = "";
+		nameSound = "";
+		pitch = 1.0;
+		speaker = "Male03PER";
+	};
+	class civ_4
+	{
+		face = "PersianHead_A3_03";
+		glasses = "";
+		name = "";
+		nameSound = "";
+		pitch = 1.0;
+		speaker = "Male02PER";
+	};
+	class civ_5
+	{
+		face = "PersianHead_A3_02";
+		glasses = "";
+		name = "";
+		nameSound = "";
+		pitch = 1.0;
+		speaker = "Male01PER";
+	};
+};
+
+class CfgWorlds {
+	class Any {
+		author = "Krzyciu";
+		description = "";
+		pictureMap = "";
+		pictureShot = "";
+		loadingTexts[] = {""};
+	};
+};
+zeusCompositionScriptLevel = 0;

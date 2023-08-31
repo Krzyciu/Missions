@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3C">
+  </Package>
+  <Package name="Krzyc">
+    <Key ID="STR_Krzyc_CfgDebriefing_MissonEnd">
+      <Polish>MISJA ZAKOŃCZONA</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgDebriefing_MissonEndSuccess">
+      <Polish>Misja zakończona sukcesem</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgDebriefing_MissonEndFailed">
+      <Polish>Misja zakończona niepowodzeniem</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgDebriefing_AllTasksAccomplished">
+      <Polish>Wszystkie zadania zostały wykonane</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgDebriefing_KrzycFailed">
+      <Polish>Misja nie powiodła się</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgDebriefing_AllUnitsDead">
+      <Polish>Wszystkie jednostki poległy</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgLeaflets_Example">
+      <Polish>Przykładowy tekst ulotki</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_CfgUnitInsignia_111thID">
+      <Polish>111 Dywizja Piechoty</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_CreatingObjs">
+      <Original>Tworzenie obiektów mapy...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_2">
+    <Original>&lt;t font='RobotoCondensedLight' size='2' color='#ffffff'&gt;Kolejna tura zamachów bombowych przyniosła znaczne straty wśród żołnierzy Koalicji. Talibowie zaczynają postępować coraz bardziej śmiało. Zeszli z gór najeżdżając miasta i wioski.&lt;/t&gt;</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_3">
+      <Original>&lt;t font='RobotoCondensedLight' size='2' color='#ffffff'&gt;Do prowincji Anizay zostały wysłane siły polskie, których zadaniem jest przywrócenie poprawnych stosunków z cywilami.&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_4">
+      <Original>Resolute Support</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_5">
+      <Original>26 Września 2009</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Intro_6">
+      <Original></Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_Talk">
+      <Original>Porozmawiaj</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_Stop">
+      <Original>Zatrzymaj</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_rescueCrew">
+      <Original>Wytnij dziurę</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_rescueCrewBar">
+      <Original>Wycinanie dziury...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_TalkToElder">
+      <Original>Porozmawiaj ze starszyzną</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepDefuse">
+      <Polish>Przygotuj do rozbrojenia</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepDefuse_Progress">
+      <Polish>Przygotowywanie ładunku do rozbrojenia...</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepDefuse_Success">
+      <Polish>&lt;t size='1.5'&gt;Ładunek przygotowany, teraz możesz odsłonić płytkę sterującą.&lt;/t&gt;</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepBoard">
+      <Polish>Odsłoń płytkę sterującą</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepBoard_Progress">
+      <Polish>Odsłananie płytki sterującej...</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_PrepBoard_Success">
+      <Polish>&lt;t size='1.5'&gt;Płytka sterująca odsłonięta, teraz możesz ją rozbroić.&lt;/t&gt;</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_DisarmBoard">
+      <Polish>Rozbrój płytę sterującą</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_DisarmBoard_Info">
+      <Polish>
+&lt;t size='1.5'&gt;UWAŻAJ W CO KLIKASZ!
+&lt;br/&gt;&lt;br/&gt;Każde kliknięcie na płytce traktowane będzie jako próba przecięcia kabla (pomyłka = detonacja).
+&lt;br/&gt;&lt;br/&gt;Podyktuj partnerowi identyfikator płytki nadrukowany na chipie. On powinien znaleźć ID w instrukcji i poprowadzić Cię do odpowiedniego kabelka.
+&lt;br/&gt;&lt;br/&gt;Kabel przetnij klikając DOKŁADNIE w niego.
+&lt;br/&gt;&lt;br/&gt;W każdej chwili możesz bezpiecznie wyjść z tego ekranu klikając ESC.
+&lt;/t&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Action_DisarmBoard_Success">
+      <Polish>
+&lt;t size='1.5'&gt;Płytka sterująca została rozbrojona.
+&lt;br/&gt;&lt;br/&gt;Jeśli nic nie wybuchło, oznacza to, że rozbroiłeś płytkę w odpowiednim ładunku, możesz go teraz bezpiecznie rozbroić.
+&lt;br/&gt;&lt;br/&gt;Wyjdź z tego ekranu klikając ESC.
+&lt;/t&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual">
+      <Polish>Płytki sterujące</Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_1">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L10|5L2II|2RT|GL&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Biały kabel łączący sockety A3 z A4.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Zielony kabel łączący sockety 48 z 49.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Żółty kabel łączący sockety 36 z 37.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Czerwony kabel łączący sockety 30 z 31.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Źółty kabel łączący sockety 28 z 29.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Czerwony kabel łączący sockety 44 z 45.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_2">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L10|5L2II|2RT|G7&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Zielony kabel łączący sockety DAC0 z DAC1.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Różowy kabel łączący sockety 44 z 45.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Niebieski kabel łączący sockety A4 z A5.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Zielony kabel łączący sockety 30 z 31.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Żółty kabel łączący sockety 28 z 29.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Czerwony kabel łączący sockety 50 z 51.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_3">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L10|5I2LI|1GB|GL&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Żółty kabel łączący sockety 28 z 29.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Zielony kabel łączący sockety 38 z 39.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Zielony kabel łączący sockety 22 z 23.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Niebieski kabel łączący sockety A4 z A5.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Biały kabel łączący sockety 44 z 45.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Zielony kabel łączący sockety DAC0 z DAC1.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_4">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L11|5I2LI|1GB|GL&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Fioletowy kabel łączący sockety 24 z 25.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Czerwony kabel łączący sockety 44 z 45.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Zielony kabel łączący sockety 34 z 35.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Biały kabel łączący sockety DAC0 z DAC1.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Zielony kabel łączący sockety 22 z 23.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Żółtys kabel łączący sockety A3 z A4.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_5">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L11|II2LI|1RB|LI&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Czerwony kabel łączący sockety A8 z A9.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Biały kabel łączący płytkę z baterią.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Zielony kabel łączący sockety 34 z 35.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Żółty kabel łączący sockety A3 z A4.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Niebieski kabel łączący sockety 38 z 39.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Czerwony kabel łączący sockety 50 z 51.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_6">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L11|II2LI|3gB|LI&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Szary kabel łączący sockety A8 z A9.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Zielony kabel łączący sockety 28 z 29.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Żółty kabel łączący sockety 38 z 39.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Szary kabel łączący sockety 42 z 43.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Biały kabel łączący sockety 24 z 25.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Zielony kabel łączący płytkę z baterią.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_7">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L1B|II2LI|2GB|LL&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Szary kabel łączący sockety 22 z 23.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Niebieski kabel łączący sockety A1 z A2.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Biały kabel łączący sockety 24 z 25.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Biały kabel łączący sockety 30 z 31.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Czarny kabel łączący płytkę z baterią.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Zielony kabel łączący sockety 50 z 51.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_8">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L1L|II2LL|3WB|I1&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Niebieski kabel łączący sockety 26 z 27.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Biały kabel łączący sockety 32 z 33.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Szary kabel łączący sockety 36 z 37.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Biały kabel łączący sockety A9 z A10.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Niebieski kabel łączący sockety 50 z 51.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Biały kabel łączący sockety DAC0 z DAC1.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_9">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L10|II2LL|3RT|I1&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Żółty kabel łączący sockety 38 z 39.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Niebieski kabel łączący sockety A2 z A3.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Różowy kabel łączący sockety 22 z 23.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Zielony kabel łączący sockety 40 z 41.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Czerwony kabel łączący sockety 48 z 49.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Zielony kabel łączący płytkę z baterią.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_BoardManual_10">
+      <Polish>
+&lt;font size='16'&gt;Potwierdź ID płytki&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='24'&gt;L10|I217|2BT|IL&lt;/font&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;font size='16'&gt;
+1 - Szary kabel łączący sockety 48 z 49.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+2 - Żółty kabel łączący sockety 32 z 33.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+3 - Niebieski kabel łączący sockety A10 z A11.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+4 - Biały kabel łączący sockety 24 z 25.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+5 - Fioletowy kabel łączący sockety 38 z 39.
+&lt;br/&gt;&lt;br/&gt;
+Jeśli nie ma kabla opisanego powyżej lub jest on w innym kolorze, przejdź do kolejnego punktu. Sprawdź 3 razy czy wszystko pasuje.
+&lt;br/&gt;&lt;br/&gt;
+6 - Niebieski kabel łączący sockety 50 z 51.
+&lt;/font&gt;
+      </Polish>
+    </Key>
+    <Key ID="STR_Krzyc_Afghan">
+      <Original>Afgański Cywil</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_1">
+      <Original>Wydaje wam się, że nam pomagacie. Odkąd tu jesteście jest jeszcze więcej cierpienia...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_2">
+      <Original>Pamiętajcie, nie do końca wam ufamy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_3">
+      <Original>*Cywil zrozumiał pytanie, ale milczy*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_4">
+      <Original>*Cywil spojrzał z pogardą i nie odpowiedział.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_5">
+      <Original>Odkąd tu jesteście coraz więcej osób chodzi głodnych.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_6">
+      <Original>Co nam po waszych prezentach? Przez was giną niewinni ludzie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_7">
+      <Original>*Cywil splunął pod twoje nogi.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_8">
+      <Original>Zabawki? W nocy przyjdą Talibowie i je zniszczą.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_9">
+      <Original>Tydzień temu Amerykanie zabili moją żonę. Podobno to był wypadek...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_10">
+      <Original>Za każdego z wioski co zaciągnął się do armii Talibowie zabili 5 innych. Po co to wszystko?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_11">
+      <Original>Przyjechaliście tu na pół roku albo i rok. Myślicie, że będziecie bohaterami którzy nam pomogą? Od 10 lat nic się nie zmieniło...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_12">
+      <Original>Ile osób musi jeszcze zginąć żebyście dali sobie w końcu spokój.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_13">
+      <Original>Najpierw Talibowie zabili mi żonę, później wy moją córkę. Oni chociaż nie udają że im na nas zależy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_14">
+      <Original>Afganistan był pięknym krajem dopóki nie przyszliście wy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_15">
+      <Original>Wody nie ma od tygodnia, musimy chodzić do innych miejscowości. Młodzi dadzą sobie radę, ale starzy?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_16">
+      <Original>Nie jestem za Talibami, robią wiele złych rzeczy, ale wy? Wcale nie jesteście lepsi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_17">
+      <Original>Wasz helikopter lądował na moim polu. Zniszczył wszystkie zbiory. Dla was to nic, ale za co ja będę żył?!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_18">
+      <Original>Amerykanie wybili mi zęby bo nie chciałem powiedzieć gdzie są Talibowie...Gdybym tylko jakiegoś kiedykolwiek na oczy widział.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_19">
+      <Original>*Pokazuje na język - jest wyrwany.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_20">
+      <Original>Ładna wioska prawda? W grudniu te tarasy pięknie wyglądają o wschodzie słońca.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_21">
+      <Original>Mój szwagier mieszka w domu na najwyższym tarasie najbardziej na prawo, powie wam to samo co starszyzna a nie jest taki zachłanny.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_22">
+      <Original>Rurociąg nam już pół roku budują. Kto to słyszał tyle czasu...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_23">
+      <Original>*Milczy.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_24">
+      <Original>Znowu wy? Zostawicie swoje prezenty, później przyjdą Talibowie i je zabiorą. To nie ma sensu...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_T_0">
+      <Original>*Arabskie przekleństwa. Raczej nic się od niego nie dowiesz.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_0">
+      <Original>Uważajcie, za wioską Talibowie majstrowali coś przy wraku.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_1">
+      <Original>Talibowie od dwóch tygodni nie pokazywali się wiosce. Mamy wszystko czego nam potrzeba.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_2">
+      <Original>Odkąd nam pomagacie, żyje nam się trochę lepiej. Dziękujemy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_3">
+      <Original>Pamiętajcie, nie do końca wam ufamy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_4">
+      <Original>Wszędzie brakuje wody, Talibowie nie pozwalją nam korzystać z waszych studni i je niszczą.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_5">
+      <Original>Następnym razem możecie przywieźć trochę waszych słodyczy. Moje dzieci je uwielbiają.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_6">
+      <Original>Moja żona skarży się na brak sklepów w okolicy. Pojechalibyśmy dalej ale Talibowie...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_7">
+      <Original>Ładny dzień dzisiaj, dawno nie było tak spokojnie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_8">
+      <Original>Ciekawe jaką pogodę macie teraz w tej waszej Kanadzie, tutaj to cały czas sucho i gorąco.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_9">
+      <Original>Cieszę się że jesteście. Chociaż na chwilę można normalnie pożyć. Szkoda że na tak krótko...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_10">
+      <Original>U mnie wszystko po staremu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_11">
+      <Original>Dzień za dniem taki sam. Nic się nie zmienia</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_12">
+      <Original>Kiedyś mieszkałem w Kabulu... To było życie, a teraz? Klepie biedę tak jak inni.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_13">
+      <Original>Wczoraj nocą przyszli Talibowie. Z nikim chyba nie rozmawiali, cholera wie co tu robili..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_14">
+      <Original>Ile bym dał żeby móc znowu grać w piłkę...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_15">
+      <Original>Ładny dzień dzisiaj, dawno nie było tak spokojnie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_16">
+      <Original>Na wzgórzu za wioską mój brat wypasa kozy. Mówił, że ziemia przy wraku wygląda na rozkopaną. Uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_17">
+      <Original>Niedługo rozpoczną się modlitwy, trzeba się zbierać do meczetu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_18">
+      <Original>Mieszkamy blisko waszej bazy, Talibowie rzadko tu zaglądają.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_19">
+      <Original>Czy mój brat bezpiecznie dotarł do waszej bazy? Mam nadzieję że tak...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_20">
+      <Original>Wasze samoloty to piękny widok, ale tak cholernie hałasują..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_21">
+      <Original>Dzień za dniem taki sam. Nic się nie zmienia.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_22">
+      <Original>Słyszeliśmy o tych zamachach na waszych żołnierzy, okropieństwo. Szkoda że niektórzy nie rozumieją ile robicie</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_23">
+      <Original>Te roboty przy wodzie trwają za długo, kto to słyszał tyle czasu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_T_24">
+      <Original>Wodę nam podłączają, stoi sobie dwóch leni cały dzień i nic nie robią. Porażka.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_0">
+      <Original>U nas spokojnie, nie robią zamachów, powoli stajemy na nogi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_1">
+      <Original>Talibowie od dwóch tygodni nie pokazywali się wiosce. Mamy wszystko czego nam potrzeba.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_2">
+      <Original>Najniższe ceny na targu tylko u mnie! Koniecznie musicie zajrzeć.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_3">
+      <Original>Ta rejestracja na białym samochodzie... Nie jest nasza.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_4">
+      <Original>Kiedy znowu będziecie? Bym wam naszykował trochę mięsa.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_5">
+      <Original>Następnym razem możecie przywieźć trochę waszych słodyczy. Moje dzieci je uwielbiają.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_6">
+      <Original>Moja żona skarży się na brak sklepów w okolicy. Pojechalibyśmy dalej ale Talibowie...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_7">
+      <Original>Ładny dzień dzisiaj, dawno nie było tak spokojnie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_8">
+      <Original>Ciekawe jaką pogodę macie teraz w tej waszej Kanadzie, tutaj to cały czas sucho i gorąco.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_9">
+      <Original>Cieszę się że jesteście. Chociaż na chwilę można normalnie pożyć. Szkoda że na tak krótko...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_10">
+      <Original>U mnie wszystko po staremu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_11">
+      <Original>Ostatnio bardzo dużo Talibów kręci się po miastach, uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_12">
+      <Original>Dużo Talibów ostatnio przyjeżdża, uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_13">
+      <Original>Wczoraj nocą przyszli Talibowie. Z nikim chyba nie rozmawiali, cholera wie co tu robili..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_14">
+      <Original>Kiedyś mieliśmy wodę, a teraz? Jak jakieś brudasy, ani się umyć ani napić...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_15">
+      <Original>Zapraszamy na zakupy, targ się jeszcze w pełni nie rozpoczął, ale na pewno znajdziecie coś interesującego!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_16">
+      <Original>Nie znam tych policjantów chyba jacyś nowi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_17">
+      <Original>Te policjanty to jakieś takie podejrzane są. Uważajcie na nich.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_18">
+      <Original>Mój szwagier kury sprzedaje może byście jedną kupili?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_19">
+      <Original>Takiego targu jak u nas to nie ma nigdzie indziej! Co wtorek z okolicznych miejscowości się dużo ludzi schodzi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_20">
+      <Original>Ale macie duże samochody, dacie nam się kiedyś przejechać?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_21">
+      <Original>Wczoraj talibowie kręcili się po miejscowości, ciekawe czy coś kombinują...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_22">
+      <Original>Nie przepadam za wami ale w przeciwieństwie do talibów staracie się nam pomagać.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_23">
+      <Original>Wodę nam podłączają, stoi sobie dwóch leni cały dzień i nic nie robią. Porażka.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_T_24">
+      <Original>Ciekawe ile osób musi jeszcze zginąć żebyście w końcu sobie odpuścili.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_0">
+      <Original>Dzięki IDAPowi moje dzieci żyją. Ich lekarze je uratowali.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_1">
+      <Original>Podobno ci z IDAPu zabierają jedzenie dla siebie...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_2">
+      <Original>Przydałoby się nam parę buldożerów, wioska nigdy nie została w pełni uprzątnięta po wojnie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_3">
+      <Original>Na polach przy wiosce ciągle zalega dużo min.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_4">
+      <Original>Uważajcie gdzie chodzicie, poza głównymi drogami ciągle są rozrzucone miny.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_5">
+      <Original>Dwa dni temu mój brat orał pole, trafił na głęboko zakopaną minę. Gdyby nie to że był w traktorze...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_6">
+      <Original>Wieczorami do wioski przychodzą Talibowie, zabierają nam to co dostaniemy od was.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_8">
+      <Original>Słyszałem że ci z IDAPu porywają dzieci...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_9">
+      <Original>Brakuje nam wody, ile bym dał za możliwość wykąpania się.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_10">
+      <Original>Szwagier zaciągnął się do armii, a ja tu zostałem sam, ze swoją i jego żoną na utrzymaniu...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_11">
+      <Original>Mój brat zginął w walce z talibami na początku 2006 roku, to już ponad 3 lata...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_T_12">
+      <Original>Chciałbym, żeby moje dzieci mogły w spokoju chodzić do szkoły.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_0">
+      <Original>Chwała Allahowi za ten szpital, nie wiem jakbyśmy dali sobię radę bez niego.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_1">
+      <Original>U nas w mieście to nie jest tak źle, wodę mamy, z jedzeniem też nie jest źle.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_2">
+      <Original>Szkoły nam brakuje, kiedyś była, ale w czasie walk została zniszczona...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_3">
+      <Original>Z daleka jedziecie? Kanada? To przecież drugi koniec świata!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_4">
+      <Original>Nie jest wam za gorąco u nas? W Kanadzie to chyba śnieg i niedźwiedzie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_5">
+      <Original>Wczoraj auto mi się zepsuło na drodze z Makan, mam nadzieję, że dalej tam stoi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_6">
+      <Original>U nas to spokojnie, do miasta Talibowie nie przyjdą.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_7">
+      <Original>Na szczęście Talibowie nie zapuszczają się do miast, ale szkoda mi tych wszystkich wiosek.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_8">
+      <Original>Od tylu lat wojna, już mi obojętne kto będzie rządził, ja chcę tylko spokoju.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_9">
+      <Original>Rosjanie nie dali rady, a myślicie że wy dacie?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_10">
+      <Original>Nasze miasteczko może i nie jest duże, ale całkiem dobrze nam się tu żyje.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_11">
+      <Original>Nie chcę wojny. Kiedyś byłem bankierem, miałem wszystko, a teraz?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_12">
+      <Original>Problem z wami jest taki, że jesteście tu na pół roku może rok i wracacie do bezpiecznego domu. My tu zostajemy...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_13">
+      <Original>Kiedyś będzie jeszcze dobrze.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_14">
+      <Original>Talibowie się tu nie zapuszczają, ale wczoraj kręcili się jacyś co nie wyglądali na miejscowych.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_15">
+      <Original>Mieszkamy dość blisko posterunku naszej policji, chyba jesteśmy bezpieczni?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_16">
+      <Original>Nasz policja jest skorumpowana, nie ufam im.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_17">
+      <Original>Policja? Te bronie co im przywozicie to połowę Talibom sprzedają.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_18">
+      <Original>W szpitalu pracują głównie nasi lekarze, są dumą naszego miasta!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_19">
+      <Original>Dzięki IDAPowi moje dzieci żyją. Ich lekarze je uratowali.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_T_20">
+      <Original>Dzięki IDAPowi moje dzieci żyją. Ich lekarze je uratowali.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_IDAP_UT_0">
+      <Original>A wy się nie boicie, że przy was też się ktoś wysadzi?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_IDAP_UT_1">
+      <Original>Dziękujemy za dostarczenie wody. Przez tą paskudną suszę ludzie nie mają co pić.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_IDAP_UT_2">
+      <Original>Za miastem chyba Talibowie coś kopali przy drodze. Uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_IDAP_UT_3">
+      <Original>Mam nadzieję że spokojnie dojedziecie tam gdzie macie dojechać. Ostatnio zrobiło się niespokojnie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_IDAP_UT_4">
+      <Original>Za miastem chyba Talibowie coś kopali przy drodze. Uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_1">
+      <Original>Taetaqid 'anak tusaeiduna. bima 'anak huna , hunak almazid min almueanaa...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_2">
+      <Original>Tadhakar 'anana la nathiq bik tmaman.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_3">
+      <Original>*Cywil zrozumiał pytanie, ale milczy*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_4">
+      <Original>*Cywil spojrzał z pogardą i nie odpowiedział.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_5">
+      <Original>Mundh 'an kunt huna , 'asbah almazid walmazid min alnaas yueanun min aljue.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_6">
+      <Original>Madha nastaemil lihadayak? Bisababik yamut al'abria'.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_7">
+      <Original>*Cywil splunął pod twoje nogi.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_8">
+      <Original>'Aleab al'atfali? Satati taliban bayn eashiat waduhaha watudamiruhum.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_9">
+      <Original>Qabl 'usbue qutil al'amrikiuwn zawjati. Ealaa ma yabdu kan hadithan...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_10">
+      <Original>Likuli qaryat junidat fi aljaysh , qatalat taliban 5 akhrin. Limadha kulu hadha?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_11">
+      <Original>Laqad 'atayt 'iilaa huna limudat nisf eam 'aw eami. Hal taetaqid 'anakum satakunun abtalaan yusaeidunana? Lam yataghayar shay' mundh 10 sanawat...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_12">
+      <Original>Kam min alnaas la yazalun mudtariyn lilmawt hataa tastaslim akhyran.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_13">
+      <Original>Awlaan , qatalat taliban zawjati , thuma qutalat abnati. 'iinahum la yadaeun hataa 'anahum yahtamuwn bina.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_14">
+      <Original>Kanat 'afghanistan dawlatan jamilatan hataa majiyika.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_15">
+      <Original>Lam yakun hunak ma' mundh 'usbue , ealayna aldhahab 'iilaa 'amakin 'ukhraa. Yumkin lilshabab alqiam bidhalik , walakina kibar alsinu?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_16">
+      <Original>'Ana last mae taliban , fahum yafealun alkathir min al'ashya' alsayiyat , lakinaki? 'Ant last 'ufadil ealaa al'iitlaqi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_17">
+      <Original>Habatat mirwahiatak fi majal eamali. damir kula almahasili. La shay' lak bas ma eayish ??!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_18">
+      <Original>Darab al'amrikiuwn 'asnani li'anani lam 'arghab fi tahdid makan wujud taliban ... law 'anani ra'ayt wahidatan bieayni.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_19">
+      <Original>*Pokazuje na język - jest wyrwany.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_20">
+      <Original>Qaryat jamilat 'alays kadhalika? fi shahr disambir , tabdu hadhih almudarajat jamilatan eind shuruq alshamsi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_21">
+      <Original>Yaeish shaqiq zawji fi almanzil fi 'aelaa shurfat ealaa alyamin , wasawf yukhbiruk binafs altariqat alati yukhbiruk biha kibar alsini wahu lays jshean jdan.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_22">
+      <Original>Laqad qamuu bibina' khati al'anabib limudat sitat 'ashhur hataa alan. Man yasmaeuha tawal alwaqt ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_23">
+      <Original>*Milczy.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_24">
+      <Original>Ya rifaq maratan 'ukhraa? tatruk hadayak thuma yati altaaliban wayakhudhunaha. Fa'iinah la maenaa lahi...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_UT_0">
+      <Original>*Arabskie przekleństwa. Raczej nic się od niego nie dowiesz.*</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_0">
+      <Original>Ahtaras , khalf alqaryat , eabath altaaliban bialhutam.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_1">
+      <Original>Lam yazhar altaaliban fi alqaryat mundh 'usbueayni. Ladayna kulu ma nahtajuhi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_2">
+      <Original>Bima 'anak tusaeiduna , fa'iina hayaatana 'afdal qlylaan. Shukran lika.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_3">
+      <Original>Tadhakar 'anana la nathiq bik tmaman.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_4">
+      <Original>La tujad miah kafiat fi kuli makan , wala tasmah lana taliban biaistikhdam abarikum watadmiriha.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_5">
+      <Original>Fi almarat alqadimat yumkinuk 'iihdar baed alhalwayaat alkhasat bika. 'Atfali yuhibuwnahum.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_6">
+      <Original>Tashtaki zawjati min qilat almahalaat altijariat fi almintaqati. Kunaa nuasil , lakina taliban ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_7">
+      <Original>Yawm jamil alyawm , lam yakun hadyan lifatrat tawila.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_8">
+      <Original>'Atasa'al ma hu altaqs fi kanada alan , fahu jaf wahar tawal alwaqti.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_9">
+      <Original>'Ana saeid li'anku. yumkinuk aleaysh bishakl tabieiin libaed alwaqti. 'Iinah li'amr musif 'anah limithl hadha alwaqt alqasir ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_10">
+      <Original>Fi eamali kalmuetadi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_11">
+      <Original>Nafs alyawm baed yawm la shay' yataghayar</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_12">
+      <Original>Kunt 'aeish fi Kabul .. hal kanat alhayat alana? 'Iinah yurbit ealaa alfaqr mithl alakharin.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_13">
+      <Original>Ja'at taliban laylat 'ams. La 'aetaqid 'anahum tahadathuu 'iilaa 'ayi shakhs , allaenat ealaa eilm bima kanuu yafealunah huna ..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_14">
+      <Original>Kam sa'ueti li'atamakan min laeib kurat alqadam maratan 'ukhraa</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_15">
+      <Original>Yawm jamil alyawm , lam yakun hadyan lifatrat tawila.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_16">
+      <Original>Ealaa altali khalf alqaryat , kan 'akhi yareaa almaeizi. Qal 'iina al'ard bijanib alhutam badat mahfuratan. Kuna hadhira.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_17">
+      <Original>Satabda alsalat qryban , ealayk khale malabisik lilmasjid</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_18">
+      <Original>Nahn naeish bialqurb min qaeidatik , wnadraan ma tati taliban 'iilaa huna.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_19">
+      <Original>Hal kan 'akhi bi'aman fi qaeidatika? 'Ana amil dhalika...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_20">
+      <Original>Tayiratuk hi mashhad jamil , lakinaha tusdr dawda' laenatan ..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_21">
+      <Original>Nafs alyawm baed yawm la shay' yataghayaru.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_22">
+      <Original>Samiena ean hadhih aliaetida'at ealaa junudik fazieata. 'Iinah li'amr musif 'ana baed alnaas la yafhamun miqdar ma tafealuh.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_23">
+      <Original>Tastaghriq tilk alruwbutat bijanib alma' wqtan twylaan , bighadi alnazar ean man samie dhalik twylaan.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_UT_24">
+      <Original>Yurbitunana bialmiah , aithnan yaqifan kasalaa tawal alyawm wala yafealan shyyan. Fashal.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_0">
+      <Original>'Iinah sahl bialnisbat lana , fahum la yata'arjahun , fanahn naeud bibut' 'iilaa 'aqdamna.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_1">
+      <Original>Lam yazhar altaaliban fi alqaryat mundh 'usbueayni. Ladayna kulu ma nahtajuhi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_2">
+      <Original>'Adnaa al'asear fi alsuwq faqat maei! yajib ealayk bialtaakid altahaquq min dhalika.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_3">
+      <Original>Hadha altasjil ealaa sayaarat bayda' ... lays lina.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_4">
+      <Original>Mataa sataeud maratan 'ukhraa? Litahdir baed alluhum lika.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_5">
+      <Original>Fi almarat alqadimat yumkinuk 'iihdar baed alhalwayaat alkhasat bika. 'Atfali yuhibuwnahum.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_6">
+      <Original>Tashtaki zawjati min qilat almahalaat altijariat fi almintaqati. Kunaa nuasil , lakina taliban ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_7">
+      <Original>Yawm jamil alyawm , lam yakun hadyan lifatrat tawilatin.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_8">
+      <Original>'Atasa'al ma hu altaqs fi kanada alan , fahu jaf wahar tawal alwaqti.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_9">
+      <Original>'Ana saeid li'anku. yumkinuk aleaysh bishakl tabieiin libaed alwaqti. 'Iinah li'amr musif 'anah limithl hadha alwaqt alqasir ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_10">
+      <Original>Fi eamali kalmuetadi.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_11">
+      <Original>Hunak alkathir min eanasir taliban yatajawalun fi almudun hadhih al'ayaam , ahtaras.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_12">
+      <Original>Alkathir min eanasir taliban yatun fi alawnat al'akhirat , fakun hadhira.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_13">
+      <Original>Ja'at taliban laylat 'ams. La 'aetaqid 'anahum tahadathuu 'iilaa 'ayi shakhs , allaenat ealaa eilm bima kanuu yafealunah huna ..</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_14">
+      <Original>Aetadna alhusul ealaa alma' walan? Mithl baed alqadharayn la taghtasil wala tashrab...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_15">
+      <Original>Nahn nadeuk lildhahab liltasawuq , alsuwq lam yabda bialkamil baed , lakinak bialtaakid satajid shyyan mthyran liliahtimami!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_16">
+      <Original>La 'aetaqid 'anani 'aerif 'ay rijal shurtat judda.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_17">
+      <Original>Rijal alshurtat hawula' murtabun lilghayati. Ahtaras minhum.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_18">
+      <Original>Sahri yabie dajajat falimadha la tashtari wahidatan?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_19">
+      <Original>La yujad mithl hadha alsuwq fi 'ayi makan akhara! Yati alkathir min alnaas kula yawm thulatha'an min albaldat almujawirati.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_20">
+      <Original>Lakin ladayk sayaarat kabirat , hal tasmah lana biqiadat alsayaarat fi waqt ma?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_21">
+      <Original>Bial'ams , kan eanasir taliban yatasakaeun fi 'anha' almadinat , 'Atasa'al eamaa 'iidha kanuu ealaa washk alqiam bishay' ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_22">
+      <Original>'Ana la 'uhibukum ya rifaq , lakinakum ealaa eaks taliban , 'antum tuhawilun musaeadatana.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_23">
+      <Original>Yurbitunana bialmiah , aithnan yaqifan kasalaa tawal alyawm wala yafealan shyyan. Fashal.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Naw_UT_24">
+      <Original>'Atasa'al kam eadad al'ashkhas aladhin la yazalun mudtariyn lilmawt hataa tatrukak akhyran.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_0">
+      <Original>Bifadl IDAP ، 'atfali ealaa qayd alhayati. 'Anqadhahum 'atibaayuhumu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_1">
+      <Original>Yaqulun 'iina al'ashkhas alnaazihin dakhilia yakhudhun altaeam li'anfusihim ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_2">
+      <Original>Yumkinuna astikhdam bide jaraafat , walam yatima tartib alqaryat bialkamil baed alharba.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_3">
+      <Original>La yazal hunak alkathir min al'algham fi alhuqul almujawirat lilqaryati.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_4">
+      <Original>Kun hdhran fi almakan aladhi tamshi fih , fala tazal hunak 'algham muntashirat ealaa alturuq alrayiysiati.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_5">
+      <Original>Qabl yawmayn , kan 'akhi yahruth hqlaan , wasadaf mnjman mdfwnan bieumqa. Lawla 'anah kan fi aljaraar...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_6">
+      <Original>Fi almasa' , yati altaaliban 'iilaa alqaryat , wayakhudhun ma nahsul ealayh minka.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_8">
+      <Original>Samiet 'ana hawula' man IDAP yakhtatifun al'atfal...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_9">
+      <Original>Nueani min naqs fi alma' , biqadr ma 'uetiaha liliastihmami.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_10">
+      <Original>Tajanud shaqiq zawji fi aljaysh wabaqiat wahdi mae zawjati lidaem ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_11">
+      <Original>Mat 'akhi fi alqital dida taliban 'awayil eam 2006 , laqad mara 'akthar min 3 sanawat ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_UT_12">
+      <Original>'Awadu 'an yatamakan 'atfali min aldhahab 'iilaa almadrasat fi salam.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_0">
+      <Original>Alhamd lilah ealaa hadhih almustashfaa , la 'adri 'iin kan bi'iimkanina altadbir bidunha.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_1">
+      <Original>'Iinah lays syyan fi madinatina , ladayna ma' , waltaeam lays syyan aydan.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_2">
+      <Original>Naftaqid almadrasat kama kanat , lakinaha damarat 'athna' almaearik ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_3">
+      <Original>Hal ant dhahib min baeidin? kanda? 'iinaha alnihayat al'ukhraa lilealami!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_4">
+      <Original>Hal 'ant ghayr sakhin maena? fi kanada , 'aetaqid 'anah thalaj wadababatu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_5">
+      <Original>Bial'ams taeatalat sayaarati ealaa altariq min makan , waml 'an takun la tazal hunaka.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_6">
+      <Original>Aljawu hadi huna , taliban lan tati 'iilaa almadinati.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_7">
+      <Original>Lihasan alhazi , la yadhhab altaaliban 'iilaa almudun , lakiniy 'asheur bial'asaf ealaa kuli hadhih alquraa.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_8">
+      <Original>Lisanawat eadidat kanat hunak harb , la yuhimuni man sayahkum , 'ana faqat 'urid alsalamu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_9">
+      <Original>Alruws lam yanjahuu , wahal taetaqid 'anak satafeili?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_10">
+      <Original>Qad la takun madinatuna kabiratan , lakinana naeish bishakl jayid huna.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_11">
+      <Original>La arid hirb. aetadt 'an 'akun msrfyan ، 'amtalik kula shay' , walan?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_12">
+      <Original>Mushkilatuk hi 'anak huna limudat sitat 'ashhur , warubama sanat , wataeud 'iilaa manzilik alaman. nahn nabqaa huna ...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_13">
+      <Original>Yawman ma sayabqaa bikhayr.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_14">
+      <Original>Lam tat taliban 'iilaa huna , lakin bial'ams kan hunak man la yabdu 'anahum min alsukaan almahaliyiyna.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_15">
+      <Original>Nahn naeish bialqurb min qism alshurtat ladayna , hal nahn bi'amani?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_16">
+      <Original>Shurtatuna fasidat , 'ana la 'athiq bihim.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_17">
+      <Original>Shurtatu? Al'aslihat alati tajlibunaha lahum tabie nisfiha litaliban.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_18">
+      <Original>Yaemal 'atibaawuna bishakl 'asasiin fi almustashfaa , fahum fakhr madintina!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_19">
+      <Original>Bifadl IDAP ، 'atfali ealaa qayd alhayati. 'Anqadhahum 'atibaayuhumu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Qalandar_UT_20">
+      <Original>Alhamd lilhi!</Original>
+    </Key>
+    <Key ID="STR_Krzyc_RemoveHelmet_0">
+      <Original>Zdejmij hełm synku i usiądź to porozmawiamy.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_RemoveHelmet_1">
+      <Original>Nic wam tu nie grozi, zdejmij ten hełm i usiądź.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_RemoveHelmet_2">
+      <Original>Nie za gorąco w tym hełmie? Zdejmij go i siądź z nami.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_RemoveHelmet_3">
+      <Original>W naszej kulturze należy zdjąć nakrycie głowy jak się rozmawia z przyjaciółmi. Chyba jesteśmy przyjaciółmi?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_RemoveHelmet_4">
+      <Original>Niegrzecznie tak w hełmie i z bronią przychodzić.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_0">
+      <Original>Mieszkamy prawie pod waszą bazą. Nasze relacje są bardzo dobre, myślę że jednak wasze dwie racje żywności znacznie poprawiłyby sytuację.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_5">
+      <Original>Jeszcze jedna panowie. Nie prosimy o dużo.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_10">
+      <Original>Kontakty z wami to sama przyjemność. Ale do konkretów. Na skrzyżowaniu na południe od miasta znajduje się wrak, przy którym Talibowie umieścili bombę. Uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Landay_15">
+      <Original>Kontakty z wami to sama przyjemność. Ale do konkretów. Na skrzyżowaniu na południe od miasta znajduje się wrak, przy którym Talibowie umieścili bombę. Uważajcie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_0">
+      <Original>Susza paskudnie nam doskwiera, mamy problemy z wodą oraz jedzeniem. Jeżeli chcecie nam pomóc to przygarniemy trochę jedzenia i butelek wody.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_1">
+      <Original>No panowie trochę więcej dajcie od siebie, tak do dziesięciu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_2">
+      <Original>No panowie trochę więcej dajcie od siebie, tak do dziesięciu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_3">
+      <Original>No panowie trochę więcej dajcie od siebie, tak do dziesięciu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_4">
+      <Original>No panowie trochę więcej dajcie od siebie, tak do dziesięciu.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_5">
+      <Original>A to nas mają za źle wykształconych, nie umiecie liczyć do 10?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_6">
+      <Original>A to nas mają za źle wykształconych, nie umiecie liczyć do 10?</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_7">
+      <Original>Jeszcze troszkę jeśli łaska...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_8">
+      <Original>Jeszcze troszkę jeśli łaska...</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_9">
+      <Original>Jeszcze jedna dla mojego synka proszę.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Janur_10">
+      <Original>Teraz możemy rozmawiać. Nie wiem na ile to prawda, ale podobno Talibowie organizują zasadzkę przy rurociągu na wyjeździe z miasta. Schowali IEDa w rurach.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_0">
+      <Original>Nie będziemy ukrywać. Nie darzyliśmy was sympatią, myśleliśmy że jesteście tutaj żeby zniszczyć naszą kulturę. Jednak dzięki ludziom z IDAPu zrozumieliśmy że jest inaczej. Dlatego chcemy wam pomóc. Jak dacie nam pięć racji to zdradzimy wam dość cenną informację.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_2">
+      <Original>To zdecydowanie za mało.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_4">
+      <Original>Jeszcze kilka, mamy dużo osób do wyżywienia.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_6">
+      <Original>To wciąż nie jest pięć panowie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_8">
+      <Original>To wciąż nie jest pięć panowie.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_10">
+      <Original>Interesy z wami to sama przyjemność. Do rzeczy. Wczoraj byli tutaj Talibowie i szukali toreb, takich wiecie podróżnych. Mój szwagier podsłuchał, że chodzi o zamach na markecie w Qalandar.</Original>
+    </Key>
+    <Key ID="STR_Krzyc_Mian_12">
+      <Original>Interesy z wami to sama przyjemność. Do rzeczy. Wczoraj byli tutaj Talibowie i szukali toreb, takich wiecie podróżnych. Mój szwagier podsłuchał, że chodzi o zamach na markecie w Qalandar.</Original>
+    </Key>
+  </Package>
+</Project>
