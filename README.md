@@ -1,15 +1,19 @@
 
 
 # Missions
-Missions made for polish speaking [Arma 3 Coop](https://www.arma3coop.pl) community
+Missions made for polish speaking [Arma4Ever](https://www.forum.arma4ever.pl) community
 
-Dedicated server ready
 
 ## Mods used:
-- [A3CS](https://github.com/SzwedzikPL/A3CS)
+- [A4ES](https://github.com/Arma4Ever/A4ES)
 - [CBA](https://github.com/CBATeam/CBA_A3)
-- [A3AP](https://www.arma3coop.pl/)
-- [ACRE](https://github.com/IDI-Systems/acre2)
-- [A3MP](https://www.arma3coop.pl/)
-- [PAM](https://www.arma3coop.pl/)
-- [Iron Front](https://steamcommunity.com/sharedfiles/filedetails/?id=660460283)
+- [TFAR](https://github.com/michail-nikolaev/task-force-arma-3-radio)
+
+## Credits
+Authors of external mods.  
+Scripts and addons macros are based on [A4ES](https://github.com/Arma4Ever/A4ES), [ACE3](https://github.com/acemod/ACE3) and [CBA](https://github.com/CBATeam/CBA_A3) projects.  
+Please check each addon readme for more credits.
+
+## License
+[MIT](https://github.com/Krzyciu/Missions/blob/master/LICENSE)  
+License only applies to content of [this repository](https://github.com/Krzyciu/Missions), not external mods used in missions.
